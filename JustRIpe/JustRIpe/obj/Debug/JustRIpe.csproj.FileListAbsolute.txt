@@ -1,0 +1,15 @@
+D:\JustRIpe\JustRIpe\bin\Debug\JustRIpe.exe.config
+D:\JustRIpe\JustRIpe\bin\Debug\JustRIpe.exe
+D:\JustRIpe\JustRIpe\bin\Debug\JustRIpe.pdb
+D:\JustRIpe\JustRIpe\obj\Debug\JustRIpe.csprojAssemblyReference.cache
+D:\JustRIpe\JustRIpe\obj\Debug\MainWindow.g.cs
+D:\JustRIpe\JustRIpe\obj\Debug\App.g.cs
+D:\JustRIpe\JustRIpe\obj\Debug\JustRIpe_MarkupCompile.cache
+D:\JustRIpe\JustRIpe\obj\Debug\JustRIpe_MarkupCompile.lref
+D:\JustRIpe\JustRIpe\obj\Debug\MainWindow.baml
+D:\JustRIpe\JustRIpe\obj\Debug\JustRIpe.g.resources
+D:\JustRIpe\JustRIpe\obj\Debug\JustRIpe.Properties.Resources.resources
+D:\JustRIpe\JustRIpe\obj\Debug\JustRIpe.csproj.GenerateResource.cache
+D:\JustRIpe\JustRIpe\obj\Debug\JustRIpe.csproj.CoreCompileInputs.cache
+D:\JustRIpe\JustRIpe\obj\Debug\JustRIpe.exe
+D:\JustRIpe\JustRIpe\obj\Debug\JustRIpe.pdb
