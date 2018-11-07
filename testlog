@@ -1,1 +1,7 @@
+Test Log for JustRipe Farm - Software Project
 
+[07/11/2018]
+Project break (MAJOR): Upon uploading files that do not match config of other files, this breaks the entire project. This was learned when
+a member of the team tried uploading the database. To fix this error in the future, files must be uploaded to different branches in the
+project. Files seperated by branches will not break the project, but also allow us to evaluate and analyse files before going on to the 
+master branch. ¦ Repo has not been restored to correct order yet.
