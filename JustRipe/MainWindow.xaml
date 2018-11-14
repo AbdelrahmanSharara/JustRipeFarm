@@ -7,19 +7,42 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="JustRipe" Height="600" Width="1024" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+
     <Grid MouseDown="Grid_MouseDown">
-           
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition/>
+
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" MinHeight="49"/>
+            <RowDefinition Height="352"/>
+            <RowDefinition Height="135"/>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-
-
-        <Grid  x:Name="GridTitle" Grid.ColumnSpan="2" Background="#FF2BAA45"  >
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Vertical" Margin="350,0,-350,0">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Account" Foreground="{Binding ElementName=Username_txt, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0,4"/>
+                    <TextBox x:Name="Username_txt" Width="300" materialDesign:HintAssist.Hint="Username" materialDesign:HintAssist.IsFloating="True"/>
+                </StackPanel>
+                
+                
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Key" Foreground="{Binding ElementName=Password_txt, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0,4"/>
+                    <PasswordBox x:Name="Password_txt" Width="300" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True" />
+                </StackPanel>
+                
+                <!--Sign in Button-->
+                <Button x:Name="SignInButton" Style="{DynamicResource MaterialDesignRaisedButton}"    materialDesign:ShadowAssist.ShadowDepth="Depth4" Content="Sign in" Background="#FF2BAA45" BorderBrush="#FF2BAA45" Height="30" Width="150" Margin="0,11,0,0" FontFamily="OpenDyslexic" Click="SignInButton_Click"/>
+            </StackPanel>
+            
+            
+        </Grid>
+        <Grid Margin="0,0,316,19"/>
+        <Grid  x:Name="GridTitle" Grid.ColumnSpan="2" Background="#FF2BAA45" Margin="0,0,0,19"  >
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 
@@ -41,7 +64,8 @@
             </StackPanel>
 
         </Grid>
-        <Image Grid.ColumnSpan="2" Margin="340,0,275,22" Source="logo.jpg" Stretch="Fill" Grid.Row="1"/>
-
+        <Image Margin="22,31,0,0" Source="logo.jpg" StretchDirection="DownOnly" Stretch="Fill" Grid.RowSpan="2" HorizontalAlignment="Left" Width="368" Height="370" VerticalAlignment="Top" Grid.Column="1"/>
+        <Grid Margin="0,0,316,19"/>
     </Grid>
+
 </Window>

@@ -25,7 +25,24 @@ namespace JustRIpe
             InitializeComponent();
         }
 
+        private void LoginInit()
+        {
+          //  MessageBox.Show("un=" + Username_txt.Text + "**pwd=" + Password_txt.Password);
+            if (LoginAuth.VerifyLogin(Username_txt.Text, Password_txt.Password))
+            {
+                MessageBox.Show("correct details");
+                MainEvent window = new MainEvent();
+                window.Show();
+                this.Close();
+                    
 
+
+            }
+            else
+            { MessageBox.Show("incorrect details"); }
+        }
+
+        
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
            Application.Current.Shutdown();
@@ -39,6 +56,14 @@ namespace JustRIpe
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
+        }
+
+        private void SignInButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            LoginInit();
+           
+
         }
     }
 }

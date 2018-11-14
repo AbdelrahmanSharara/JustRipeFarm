@@ -1,0 +1,110 @@
+﻿<Window x:Class="JustRIpe.MainEvent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:JustRIpe"
+        mc:Ignorable="d"
+        Title="JustRipe" Height="600" Width="1024" ResizeMode="NoResize" WindowStyle="None" Foreground="White" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Storyboard x:Key="MenuOn">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Menu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="75"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="215"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MenuOff">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Menu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="215"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="75"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+
+    <Window.Triggers>
+        <!--Open Trigger-->
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="OpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuOn}"/>
+        </EventTrigger>
+
+        <!--Close Trigger-->
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="CloseMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuOff}"/>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid MouseDown="Grid_MouseDown">
+        <Grid x:Name="EventCenter" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="550" Width="976" />
+        <Grid Height="50" VerticalAlignment="Top" Background="#FF2BAA45">
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
+            </Grid.Effect>
+            <TextBlock HorizontalAlignment="Center" FontSize="25" Margin="474,0,425,0" Width="125" ><Run FontFamily="OpenDyslexic" Text="JustRipe"/><LineBreak/><Run/></TextBlock>
+            <StackPanel>
+                <materialDesign:PopupBox  HorizontalAlignment="Right" Margin="11"
+                                          PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                    <StackPanel Width="150">
+                        <Button x:Name="Signoutbt" Content="Sign out" Click="Signoutbt_Click"/>
+                        <Button x:Name="Exitbt" Content="Exit" Click="Exitbt_Click"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </StackPanel>
+        </Grid>
+
+
+        <Grid x:Name="Menu" Width="65"  HorizontalAlignment="Left" Background="#FF16AE35">
+            <StackPanel>
+                <Grid Height="160" Background="White">
+                    <Button x:Name="CloseMenu" Width="65" Height="65" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="CloseMenu_Click">
+                        <materialDesign:PackIcon Foreground="#FF16AE35" Kind="ArrowLeft" Width="30" Height="30"/>
+                    </Button>
+
+                    <Button x:Name="OpenMenu" Width="65" Height="65" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="OpenMenu_Click">
+                        <materialDesign:PackIcon Foreground="#FF16AE35" Kind="Menu" Width="37" Height="30" Margin="-5" />
+                    </Button>
+                    <Image Margin="0,43,0,0" Source="logo.jpg" Stretch="Uniform"/>
+
+                </Grid>
+
+                <ListView x:Name="MenuSelector" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="MenuSelector_SelectionChanged">
+                    <ListViewItem x:Name="Dashboard" Height="65">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="MonitorDashboard" Width="30" Margin="12" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
+                            <TextBlock Text="Dashboard" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFFFFFF"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem x:Name="Storage" Height="65">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="NetworkAttachedStorage" Width="30" Height="30" VerticalAlignment="Center" Foreground="#DDF7F7F7" Margin="12"/>
+                            <TextBlock Text="Storage" VerticalAlignment="Center" Margin="15 10" Foreground="#FFFBFBFB"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem x:Name="Crops" Height="65">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Leaf" Width="30" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF" Margin="12"/>
+                            <TextBlock Text="Crops" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem x:Name="Delivery" Height="65">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="TruckDelivery" Width="30" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF" Margin="12"/>
+                            <TextBlock Text="Delivery" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFFFFFF"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem x:Name="Users" Height="65">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="UserSettingsVariant" Width="30" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF" Margin="12"/>
+                            <TextBlock Text="Users" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                </ListView>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
