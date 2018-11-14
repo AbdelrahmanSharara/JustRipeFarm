@@ -48,6 +48,45 @@ namespace JustRIpe
         private void MenuSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+            UserControl tab = null;
+            EventCenter.Children.Clear();
+
+            switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
+            {
+                case "Dashboard":
+                    tab = new DashboardEvent();
+                    EventCenter.Children.Add(tab);
+                    break;
+
+                case "Storage":
+                    tab = new StorageEvent();
+                    EventCenter.Children.Add(tab);
+                    break;
+
+                case "Crops":
+                    tab = new CropsEvent();
+                    EventCenter.Children.Add(tab);
+                    break;
+                case "Delivery":
+                    tab = new DeliveryEvent();
+                    EventCenter.Children.Add(tab);
+                    break;
+                case "Users":
+                    tab = new UsersEvent();
+                    EventCenter.Children.Add(tab);
+                    break;
+                default:
+                    break;
+
+            }
+        }
+
+        private void Signoutbt_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = new MainWindow();
+            window.Show();
+            this.Close();
+
         }
     }
 }

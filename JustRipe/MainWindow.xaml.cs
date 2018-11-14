@@ -27,13 +27,16 @@ namespace JustRIpe
 
         private void LoginInit()
         {
-
             if (LoginAuth.VerifyLogin(Username_txt.Text, Password_txt.Password))
             {
                 MessageBox.Show("correct details");
+                MainEvent window = new MainEvent();
+                window.Show();
+                this.Close();
                     
 
-                
+
+
             }
             else
             { MessageBox.Show("incorrect details"); }
@@ -57,9 +60,10 @@ namespace JustRIpe
 
         private void SignInButton_Click(object sender, RoutedEventArgs e)
         {
-            MainEvent window = new MainEvent();
-            window.Show();
-            this.Close();
+
+
+            LoginInit();
+           
 
 
         }
