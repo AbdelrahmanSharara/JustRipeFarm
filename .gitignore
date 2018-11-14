@@ -212,6 +212,7 @@ UpgradeLog*.htm
 
 
 
+
 # Business Intelligence projects
 *.rdl.data
 *.bim.layout

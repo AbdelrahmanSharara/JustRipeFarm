@@ -82,6 +82,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+
     <Compile Include="CropsEvent.xaml.cs">
       <DependentUpon>CropsEvent.xaml</DependentUpon>
     </Compile>
@@ -106,6 +107,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    
     <Page Include="MainEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -118,9 +120,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+
     <Compile Include="DashboardEvent.xaml.cs">
       <DependentUpon>DashboardEvent.xaml</DependentUpon>
     </Compile>
+
     <Compile Include="DatabaseTransmission.cs" />
     <Compile Include="LoginAuth.cs" />
     <Compile Include="MainEvent.xaml.cs">
@@ -187,12 +191,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+
     <Content Include="JustRipeFarmDatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="JustRipeFarmDatabase_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>JustRipeFarmDatabase.mdf</DependentUpon>
+
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

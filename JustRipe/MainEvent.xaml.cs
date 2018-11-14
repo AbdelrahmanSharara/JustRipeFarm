@@ -47,6 +47,7 @@ namespace JustRIpe
 
         private void MenuSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
             UserControl tab = null;
             EventCenter.Children.Clear();
 
@@ -85,6 +86,7 @@ namespace JustRIpe
             MainWindow window = new MainWindow();
             window.Show();
             this.Close();
+
         }
     }
 }

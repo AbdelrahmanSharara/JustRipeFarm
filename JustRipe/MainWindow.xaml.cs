@@ -27,7 +27,6 @@ namespace JustRIpe
 
         private void LoginInit()
         {
-          //  MessageBox.Show("un=" + Username_txt.Text + "**pwd=" + Password_txt.Password);
             if (LoginAuth.VerifyLogin(Username_txt.Text, Password_txt.Password))
             {
                 MessageBox.Show("correct details");
@@ -35,6 +34,7 @@ namespace JustRIpe
                 window.Show();
                 this.Close();
                     
+
 
 
             }
@@ -61,8 +61,10 @@ namespace JustRIpe
         private void SignInButton_Click(object sender, RoutedEventArgs e)
         {
 
+
             LoginInit();
            
+
 
         }
     }

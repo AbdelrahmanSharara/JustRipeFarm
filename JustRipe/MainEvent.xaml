@@ -35,7 +35,9 @@
     </Window.Triggers>
 
     <Grid MouseDown="Grid_MouseDown">
+
         <Grid x:Name="EventCenter" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="550" Width="976" />
+
         <Grid Height="50" VerticalAlignment="Top" Background="#FF2BAA45">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
@@ -45,7 +47,9 @@
                 <materialDesign:PopupBox  HorizontalAlignment="Right" Margin="11"
                                           PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
                     <StackPanel Width="150">
+
                         <Button x:Name="Signoutbt" Content="Sign out" Click="Signoutbt_Click"/>
+
                         <Button x:Name="Exitbt" Content="Exit" Click="Exitbt_Click"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
@@ -68,7 +72,9 @@
                 </Grid>
 
                 <ListView x:Name="MenuSelector" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="MenuSelector_SelectionChanged">
+
                     <ListViewItem x:Name="Dashboard" Height="65">
+
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="MonitorDashboard" Width="30" Margin="12" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
                             <TextBlock Text="Dashboard" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFFFFFF"/>
@@ -76,6 +82,7 @@
                     </ListViewItem>
 
                     <ListViewItem x:Name="Storage" Height="65">
+
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="NetworkAttachedStorage" Width="30" Height="30" VerticalAlignment="Center" Foreground="#DDF7F7F7" Margin="12"/>
                             <TextBlock Text="Storage" VerticalAlignment="Center" Margin="15 10" Foreground="#FFFBFBFB"/>
@@ -83,6 +90,7 @@
                     </ListViewItem>
 
                     <ListViewItem x:Name="Crops" Height="65">
+                   
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Leaf" Width="30" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF" Margin="12"/>
                             <TextBlock Text="Crops" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
@@ -90,6 +98,7 @@
                     </ListViewItem>
 
                     <ListViewItem x:Name="Delivery" Height="65">
+
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="TruckDelivery" Width="30" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF" Margin="12"/>
                             <TextBlock Text="Delivery" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFFFFFF"/>
@@ -97,7 +106,8 @@
                     </ListViewItem>
 
                     <ListViewItem x:Name="Users" Height="65">
-                        <StackPanel Orientation="Horizontal">
+                      
+       <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="UserSettingsVariant" Width="30" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF" Margin="12"/>
                             <TextBlock Text="Users" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
                         </StackPanel>
