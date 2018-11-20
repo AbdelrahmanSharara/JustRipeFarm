@@ -12,7 +12,8 @@
                                                        \/     \/                        /_____/         
   
   [30/10/2018]
-  JustRipe Software Project - Started
+  This test log has been designed to list any major problems we've faced during this project. Minor problems and additional testing
+  can be found in the Final Report.
   
   [07/11/2018] ID: 001
   Project break (MAJOR): Upon uploading files that do not match config of other files, this breaks the entire project. This was learned 
