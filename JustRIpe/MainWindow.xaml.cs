@@ -25,6 +25,7 @@ namespace JustRIpe
             InitializeComponent();
         }
 
+        //verify the login using the database 
         private void LoginInit()
         {
             if (LoginAuth.VerifyLogin(Username_txt.Text, Password_txt.Password))
@@ -42,17 +43,18 @@ namespace JustRIpe
             { MessageBox.Show("incorrect details"); }
         }
 
-        
+        //The close button
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
            Application.Current.Shutdown();
         }
-
+        //The minimise button 
         private void MinimiseButton_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
 
+        //Draggable Window from the grid bar
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
@@ -64,8 +66,16 @@ namespace JustRIpe
 
             LoginInit();
            
-
-
         }
+        
+        //Enter button can initialise the login procedure
+        private void Password_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key != System.Windows.Input.Key.Enter)
+                return;
+                SignInButton_Click(sender, e);
+        }
+
+        
     }
 }

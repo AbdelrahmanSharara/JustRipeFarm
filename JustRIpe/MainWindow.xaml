@@ -9,12 +9,13 @@
         Title="JustRipe" Height="600" Width="1024" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
 
     <Grid MouseDown="Grid_MouseDown">
-
+        <!--Adjust the grid  sizes-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
 
         </Grid.ColumnDefinitions>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="49"/>
             <RowDefinition Height="352"/>
@@ -22,17 +23,22 @@
             <RowDefinition Height="29*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
+        
+        
         <Grid Grid.Row="2">
             <StackPanel Orientation="Vertical" Margin="350,0,-350,0">
+                
+                <!--Te Username Bar-->
+                
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Account" Foreground="{Binding ElementName=Username_txt, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0,4"/>
                     <TextBox x:Name="Username_txt" Width="300" materialDesign:HintAssist.Hint="Username" materialDesign:HintAssist.IsFloating="True"/>
                 </StackPanel>
                 
-                
+                <!--The Password Bar-->
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Key" Foreground="{Binding ElementName=Password_txt, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0,4"/>
-                    <PasswordBox x:Name="Password_txt" Width="300" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True" />
+                    <PasswordBox x:Name="Password_txt" Width="300" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True" KeyDown="Password_txt_KeyDown" />
                 </StackPanel>
                 
                 <!--Sign in Button-->
@@ -46,13 +52,13 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 
-
+                <!--The Minimise Button-->
                 <Button  x:Name="MinimiseButton" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"  Width="22" Height="22" Background="#FF2BAA45" BorderBrush="#FF2BAA45" Foreground="{DynamicResource SecondaryAccentForegroundBrush}" Click="MinimiseButton_Click"  >
 
                     <materialDesign:PackIcon Kind="WindowMinimize"/>
                 </Button>
 
-
+                <!--The Close Button-->
                 <Button x:Name="CloseButton" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="22" Height="22" Background="#FF2BAA45" Foreground="{DynamicResource SecondaryAccentForegroundBrush}" Click="CloseButton_Click" BorderBrush="#FF2BAA45" Margin="9,4">
 
 
