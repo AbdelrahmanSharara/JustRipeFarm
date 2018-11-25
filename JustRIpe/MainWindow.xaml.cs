@@ -30,7 +30,7 @@ namespace JustRIpe
         {
             if (LoginAuth.VerifyLogin(Username_txt.Text, Password_txt.Password))
             {
-                MessageBox.Show("correct details");
+                MessageBox.Show("Login successful!");
                 MainEvent window = new MainEvent();
                 window.Show();
                 this.Close();
@@ -40,7 +40,7 @@ namespace JustRIpe
 
             }
             else
-            { MessageBox.Show("incorrect details"); }
+            { MessageBox.Show("Incorrect details. Please try again."); }
         }
 
         //The close button

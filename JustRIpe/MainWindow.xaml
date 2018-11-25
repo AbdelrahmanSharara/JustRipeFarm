@@ -28,7 +28,7 @@
         <Grid Grid.Row="2">
             <StackPanel Orientation="Vertical" Margin="350,0,-350,0">
                 
-                <!--Te Username Bar-->
+                <!--The Username Bar-->
                 
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Account" Foreground="{Binding ElementName=Username_txt, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0,4"/>
