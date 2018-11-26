@@ -94,6 +94,11 @@
     <Compile Include="Events\UsersEvent.xaml.cs">
       <DependentUpon>UsersEvent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StorageDSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StorageDSet.xsd</DependentUpon>
+    </Compile>
     <Page Include="Events\CropsEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -161,6 +166,17 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="StorageDSet.xsc">
+      <DependentUpon>StorageDSet.xsd</DependentUpon>
+    </None>
+    <None Include="StorageDSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StorageDSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StorageDSet.xss">
+      <DependentUpon>StorageDSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
