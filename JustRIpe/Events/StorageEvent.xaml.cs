@@ -23,7 +23,8 @@ namespace JustRIpe
     /// </summary>
     public partial class StorageEvent : UserControl
     {
-        string connectionString = "";
+        //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DB\JustRipeFarmDatabase.mdf;Integrated Security=True;";
+        string connectionString = Properties.Settings.Default.DBAccess;
         public StorageEvent()
         {
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace JustRIpe
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlData = new SqlDataAdapter("", sqlCon);
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Storage", sqlCon);
                 DataSet dtg1 = new DataSet();
                 sqlData.Fill(dtg1);
 

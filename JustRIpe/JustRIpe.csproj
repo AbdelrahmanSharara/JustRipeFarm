@@ -82,6 +82,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CropsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CropsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Events\CropsEvent.xaml.cs">
       <DependentUpon>CropsEvent.xaml</DependentUpon>
     </Compile>
@@ -162,6 +167,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="CropsDataSet.xsc">
+      <DependentUpon>CropsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CropsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CropsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CropsDataSet.xss">
+      <DependentUpon>CropsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
