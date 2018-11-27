@@ -13,6 +13,12 @@
     <Grid DataContext="{StaticResource usersViewSource}">
         <Label Content="Users" HorizontalAlignment="Left" Margin="383,10,0,0" VerticalAlignment="Top" Height="74" FontSize="36" Width="170"/>
         <DataGrid x:Name="usersDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="157,113,184,121.6" RowDetailsVisibilityMode="VisibleWhenSelected" HorizontalAlignment="Center" Width="459">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.154"/>
+                    <GradientStop Color="#FFBBD38A" Offset="0.153"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="usernameColumn" Binding="{Binding username}" Header="Username" Width="100"/>
                 <DataGridTextColumn x:Name="phoneNoColumn" Binding="{Binding phoneNo}" Header="Phone Number" Width="125"/>
