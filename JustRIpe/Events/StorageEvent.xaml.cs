@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data.Sql;
+using System.Configuration;
 using System.Data;
 
 namespace JustRIpe
@@ -23,11 +24,11 @@ namespace JustRIpe
     /// </summary>
     public partial class StorageEvent : UserControl
     {
-        //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DB\JustRipeFarmDatabase.mdf;Integrated Security=True;";
         string connectionString = Properties.Settings.Default.DBAccess;
         public StorageEvent()
         {
-            InitializeComponent();
+            InitializeComponent(); //storageDataGrid.ItemsSource =
+            FillDataGrid();
         }
 
         private void Load_table_Click(object sender, RoutedEventArgs e)
@@ -35,15 +36,18 @@ namespace JustRIpe
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void FillDataGrid()
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
+
+
                 sqlCon.Open();
                 SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Storage", sqlCon);
-                DataSet dtg1 = new DataSet();
-                sqlData.Fill(dtg1);
+                DataTable StorageDSet = new DataTable();
+                sqlData.Fill(StorageDSet);
 
+                storageDataGrid.ItemsSource = StorageDSet.DefaultView;
             }
 
 
@@ -60,5 +64,7 @@ namespace JustRIpe
             // 	myCollectionViewSource.Source = your data
             // }
         }
+
+
     }
 }
