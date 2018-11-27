@@ -12,7 +12,7 @@
     </UserControl.Resources>
     <Grid DataContext="{StaticResource cropsViewSource}">
         <DataGrid HorizontalAlignment="Left" Height="100" Margin="390,176,0,0" VerticalAlignment="Top" Width="100"/>
-        <DataGrid x:Name="cropsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="198,97,118,87" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid x:Name="cropsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="251,97,176,87" RowDetailsVisibilityMode="VisibleWhenSelected" IsSynchronizedWithCurrentItem="True">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="cropIDColumn" Binding="{Binding cropID}" Header="crop ID" IsReadOnly="True" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="fertiliserIDColumn" Binding="{Binding fertiliserID}" Header="fertiliser ID" Width="SizeToHeader"/>

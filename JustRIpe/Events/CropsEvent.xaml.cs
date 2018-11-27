@@ -23,9 +23,26 @@ namespace JustRIpe
     /// </summary>
     public partial class CropsEvent : UserControl
     {
+        string connectionString = Properties.Settings.Default.DBAccess;
+
         public CropsEvent()
         {
             InitializeComponent();
+            FillDataGrid();
+        }
+
+        private void FillDataGrid()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Crops", sqlCon);
+                DataTable CropsDataSet = new DataTable();
+                sqlData.Fill(CropsDataSet);
+                cropsDataGrid.ItemsSource = CropsDataSet.DefaultView;
+            }
+
+
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
