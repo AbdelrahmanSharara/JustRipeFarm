@@ -12,16 +12,16 @@
     </UserControl.Resources>
     <Grid DataContext="{StaticResource storageViewSource}">
         <Label Content="Storage" HorizontalAlignment="Left" Margin="383,10,0,0" VerticalAlignment="Top" Height="74" FontSize="36" Width="170"/>
-        <DataGrid x:Name="storageDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="34,118,62,81" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid x:Name="storageDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="34,118,62,81" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="StorageDataGrid_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="storageIDColumn" Binding="{Binding storageID}" Header="storage ID" IsReadOnly="True" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="containerIDColumn" Binding="{Binding containerID}" Header="container ID" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="fertiliserIDColumn" Binding="{Binding fertiliserID}" Header="fertiliser ID" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="storageNameColumn" Binding="{Binding storageName}" Header="storage Name" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="storageCapacityColumn" Binding="{Binding storageCapacity}" Header="storage Capacity" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="storageAvailabilityColumn" Binding="{Binding storageAvailability}" Header="storage Availability" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="minTempColumn" Binding="{Binding minTemp}" Header="min Temp" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="maxTempColumn" Binding="{Binding maxTemp}" Header="max Temp" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="storageIDColumn" Binding="{Binding storageID}" Header="Storage ID" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="containerIDColumn" Binding="{Binding containerID}" Header="Container ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="fertiliserIDColumn" Binding="{Binding fertiliserID}" Header="Fertiliser ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="storageNameColumn" Binding="{Binding storageName}" Header="Name" Width="SizeToCells"/>
+                <DataGridTextColumn x:Name="storageCapacityColumn" Binding="{Binding storageCapacity}" Header="Capacity" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="storageAvailabilityColumn" Binding="{Binding storageAvailability}" Header="Availability" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="minTempColumn" Binding="{Binding minTemp}" Header="Min Temp" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="maxTempColumn" Binding="{Binding maxTemp}" Header="Max Temp" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
 

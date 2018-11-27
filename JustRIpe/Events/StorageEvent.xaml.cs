@@ -40,13 +40,12 @@ namespace JustRIpe
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
+                
+                sqlCon.Open(); //establishing sql connection
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Storage", sqlCon); //sql statement
+                DataTable StorageDSet = new DataTable(); //defining dataset
 
-
-                sqlCon.Open();
-                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Storage", sqlCon);
-                DataTable StorageDSet = new DataTable();
-                sqlData.Fill(StorageDSet);
-
+                sqlData.Fill(StorageDSet); //filling database
                 storageDataGrid.ItemsSource = StorageDSet.DefaultView;
             }
 
@@ -65,6 +64,9 @@ namespace JustRIpe
             // }
         }
 
+        private void StorageDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+        }
     }
 }
