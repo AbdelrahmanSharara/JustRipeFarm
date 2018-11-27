@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Windows.Threading;
 
 namespace JustRIpe
 {
@@ -26,17 +27,20 @@ namespace JustRIpe
         public DashboardEvent()
         {
             InitializeComponent();
+            startClock();
         }
 
-        //crop button
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void startClock()
         {
-        
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += tickevent;
+            timer.Start();
+
         }
-
-        private void Close()
+        public void tickevent(object sender, EventArgs e)
         {
-
+            Clocklbl.Content = DateTime.Now.ToString(@"hh\:mm");
         }
     }
 }
