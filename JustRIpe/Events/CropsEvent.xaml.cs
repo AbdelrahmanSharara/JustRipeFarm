@@ -28,10 +28,13 @@ namespace JustRIpe
         public CropsEvent()
         {
             InitializeComponent();
-            FillDataGrid();
+            FillDataGridCrops();
+            FillDataGridFertilisers();
         }
 
-        private void FillDataGrid()
+        // Fills the data grid for displaying Crops currently in cultivation
+        // Name of the data grid: CropsDataSet
+        private void FillDataGridCrops()
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
@@ -40,6 +43,21 @@ namespace JustRIpe
                 DataTable CropsDataSet = new DataTable();
                 sqlData.Fill(CropsDataSet);
                 cropsDataGrid.ItemsSource = CropsDataSet.DefaultView;
+            }
+
+
+        }
+        // Fills the data grid for displaying
+        // Name of the data grid: 
+        private void FillDataGridFertilisers()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT fertiliserName, cropDestined FROM Fertilisers", sqlCon);
+                DataTable FertilisersDataSet = new DataTable();
+                sqlData.Fill(FertilisersDataSet);
+                fertilisersDataGrid.ItemsSource = FertilisersDataSet.DefaultView;
             }
 
 
