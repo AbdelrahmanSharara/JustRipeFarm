@@ -40,7 +40,7 @@
     <Grid MouseDown="Grid_MouseDown">
         <!--The User Control Displays-->
         <Grid x:Name="EventCenter" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="550" Width="959" />
-
+       
         <Grid Height="50" VerticalAlignment="Top" Background="#FF2BAA45">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>

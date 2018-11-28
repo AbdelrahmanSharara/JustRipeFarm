@@ -26,7 +26,7 @@ namespace JustRIpe
     {
         public DashboardEvent()
         {
-            InitializeComponent()
+            InitializeComponent();
         }
     }
 }

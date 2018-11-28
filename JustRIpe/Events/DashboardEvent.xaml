@@ -6,9 +6,4 @@
              xmlns:local="clr-namespace:JustRIpe"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="White">
-
-    <Grid>
-        <Label Content="Support: admin@softproj.com" FontSize="20" HorizontalAlignment="Left" Margin="667,499,-142,-84.4" VerticalAlignment="Top"/>
-    </Grid>
-
 </UserControl>
