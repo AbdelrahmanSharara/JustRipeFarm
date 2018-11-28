@@ -23,23 +23,9 @@ namespace JustRIpe
         public MainEvent()
         {
             InitializeComponent();
-           // startClock();
+         
         }
 
-        // clock isn't needed
-        /*
-        private void startClock()
-        {
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += tickevent;
-            timer.Start();
-        }
-        public void tickevent(object sender, EventArgs e)
-        {
-            Clocklbl.Content = DateTime.Now.ToString(@"dd/MM/yyyy [HH:mm]");
-        }
-        */
 
             private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -87,6 +73,10 @@ namespace JustRIpe
                     break;
                 case "Delivery":
                     tab = new DeliveryEvent();
+                    EventCenter.Children.Add(tab);
+                    break;
+                case "Timetable":
+                    tab = new TimetableEvent();
                     EventCenter.Children.Add(tab);
                     break;
                 case "Users":

@@ -119,6 +119,15 @@
                         </StackPanel>
                     </ListViewItem>
 
+                    <!--The Timetable Button-->
+                    <ListViewItem x:Name="Timetable" Padding="0" Height="65">
+
+                        <StackPanel Orientation="Horizontal" Width="auto" Height="65">
+                            <materialDesign:PackIcon Kind="Calendar" Width="30" Margin="17.5 0" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
+                            <TextBlock Text="Timetable" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
+                        </StackPanel>
+                    </ListViewItem>
+
                     <!--The Users Button-->
                     <ListViewItem x:Name="Users" Padding="0" Height="65">
 
@@ -128,9 +137,10 @@
                         </StackPanel>
                     </ListViewItem>
 
+
+
                 </ListView>
             </StackPanel>
-            <!--Label Content=""  Name="Clocklbl" FontSize ="18" HorizontalAlignment="right" Margin="0,0,-956,-55" VerticalAlignment="bottom" Height="92" Width="244" HorizontalContentAlignment="right"/>-->
         </Grid>
     </Grid>
 </Window>

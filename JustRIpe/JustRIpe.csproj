@@ -114,10 +114,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StorageDSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="UserDSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserDSet.xsd</DependentUpon>
+    <Compile Include="Events\TimetableEvent.xaml.cs">
+      <DependentUpon>TimetableEvent.xaml</DependentUpon>
     </Compile>
     <Page Include="Events\CropsEvent.xaml">
       <SubType>Designer</SubType>
@@ -160,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Events\UsersEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\TimetableEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,17 +232,6 @@
     </None>
     <None Include="StorageDSet.xss">
       <DependentUpon>StorageDSet.xsd</DependentUpon>
-    </None>
-    <None Include="UserDSet.xsc">
-      <DependentUpon>UserDSet.xsd</DependentUpon>
-    </None>
-    <None Include="UserDSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>UserDSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UserDSet.xss">
-      <DependentUpon>UserDSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
