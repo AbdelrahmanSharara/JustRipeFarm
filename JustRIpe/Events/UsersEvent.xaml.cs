@@ -28,23 +28,8 @@ namespace JustRIpe
         public UsersEvent()
         {
             InitializeComponent(); //storageDataGrid.ItemsSource =
-            FillDataGrid();
         }
-
-        private void FillDataGrid()
-        {
-            using (SqlConnection sqlCon = new SqlConnection(connectionString))
-            {
-
-                sqlCon.Open(); //establishing sql connection
-                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Users", sqlCon); //sql statement
-                DataTable UsersDSet = new DataTable(); //defining dataset
-
-                sqlData.Fill(UsersDSet); //filling database
-                usersDataGrid.ItemsSource = UsersDSet.DefaultView;
-            }
-        }
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+            private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
 
             // Do not load your data at design time.

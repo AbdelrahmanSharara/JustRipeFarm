@@ -45,21 +45,20 @@
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
             </Grid.Effect>
-            
-            
+
+
             <StackPanel>
                 <materialDesign:PopupBox  HorizontalAlignment="Right" Margin="11"
                                           PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
                     <StackPanel Width="150">
-                    <!--Signout Button-->
+                        <!--Signout Button-->
                         <Button x:Name="Signoutbt" Content="Sign out" Click="Signoutbt_Click"/>
-                    <!--Exit Button-->
+                        <!--Exit Button-->
                         <Button x:Name="Exitbt" Content="Exit" Click="Exitbt_Click"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
             </StackPanel>
         </Grid>
-
 
         <Grid x:Name="Menu" Width="65"  HorizontalAlignment="Left" Background="#FF16AE35">
             <StackPanel>

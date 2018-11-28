@@ -27,20 +27,6 @@ namespace JustRIpe
         public DashboardEvent()
         {
             InitializeComponent();
-            startClock();
-        }
-
-        private void startClock()
-        {
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += tickevent;
-            timer.Start();
-
-        }
-        public void tickevent(object sender, EventArgs e)
-        {
-            Clocklbl.Content = DateTime.Now.ToString(@"hh\:mm");
         }
     }
 }
