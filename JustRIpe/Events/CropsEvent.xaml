@@ -11,16 +11,16 @@
         <CollectionViewSource x:Key="cropsViewSource" Source="{Binding Crops, Source={StaticResource cropsDataSet}}"/>
     </UserControl.Resources>
     <Grid DataContext="{StaticResource cropsViewSource}">
-        <DataGrid HorizontalAlignment="Left" Height="100" Margin="390,176,0,0" VerticalAlignment="Top" Width="100"/>
-        <DataGrid x:Name="cropsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="251,97,176,87" RowDetailsVisibilityMode="VisibleWhenSelected" IsSynchronizedWithCurrentItem="True">
+        <DataGrid x:Name="cropsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="171,94,472,217" RowDetailsVisibilityMode="VisibleWhenSelected" IsSynchronizedWithCurrentItem="True">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="cropIDColumn" Binding="{Binding cropID}" Header="crop ID" IsReadOnly="True" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="fertiliserIDColumn" Binding="{Binding fertiliserID}" Header="fertiliser ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="cropIDColumn" Binding="{Binding cropID}" Header="crop ID" IsReadOnly="True" Width="SizeToHeader" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="fertiliserIDColumn" Binding="{Binding fertiliserID}" Header="fertiliser ID" Width="SizeToHeader" Visibility="Hidden"/>
                 <DataGridTextColumn x:Name="cropNameColumn" Binding="{Binding cropName}" Header="crop Name" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="currentStatusColumn" Binding="{Binding currentStatus}" Header="current Status" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="currentStatusColumn" Binding="{Binding currentStatus}" Header="current Status" Width="SizeToHeader" Visibility="Hidden"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Crops" HorizontalAlignment="Left" Margin="388,35,0,0" VerticalAlignment="Top" Height="57" Width="102" FontSize="36"/>
+        <Label Content="Crops" HorizontalAlignment="Left" Margin="340,10,0,0" VerticalAlignment="Top" Height="57" Width="150" FontSize="36" FontFamily="Rockwell Extra Bold"/>
+        <Label Content="Crops currently in cultivation" HorizontalAlignment="Left" Margin="171,67,0,0" VerticalAlignment="Top" Width="250" FontFamily="Showcard Gothic" FontSize="14"/>
 
     </Grid>
 </UserControl>

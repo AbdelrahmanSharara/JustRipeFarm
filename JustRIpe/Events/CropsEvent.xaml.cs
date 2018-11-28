@@ -36,7 +36,7 @@ namespace JustRIpe
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Crops", sqlCon);
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT cropName FROM Crops WHERE currentStatus = 1", sqlCon);
                 DataTable CropsDataSet = new DataTable();
                 sqlData.Fill(CropsDataSet);
                 cropsDataGrid.ItemsSource = CropsDataSet.DefaultView;
