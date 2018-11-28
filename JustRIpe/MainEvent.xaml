@@ -36,7 +36,7 @@
         </EventTrigger>
     </Window.Triggers>
 
-    
+
     <Grid MouseDown="Grid_MouseDown">
         <!--The User Control Displays-->
         <Grid x:Name="EventCenter" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="550" Width="959" />
