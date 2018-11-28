@@ -18,17 +18,18 @@ using System.Data;
 
 namespace JustRIpe
 {
-    /// <summary>
-    /// Interaction logic for CropsEvent.xaml
-    /// </summary>
     public partial class CropsEvent : UserControl
     {
+        // Establish connection to the database
         string connectionString = Properties.Settings.Default.DBAccess;
 
         public CropsEvent()
         {
+            // Initialise the page
             InitializeComponent();
+            // Fill the crops data grid with data
             FillDataGridCrops();
+            // Fill the fertilisers data grid with data
             FillDataGridFertilisers();
         }
 
@@ -39,14 +40,14 @@ namespace JustRIpe
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
+                // SQL Statement
                 SqlDataAdapter sqlData = new SqlDataAdapter("SELECT cropName FROM Crops WHERE currentStatus = 1", sqlCon);
                 DataTable CropsDataSet = new DataTable();
                 sqlData.Fill(CropsDataSet);
                 cropsDataGrid.ItemsSource = CropsDataSet.DefaultView;
             }
-
-
         }
+
         // Fills the data grid for displaying
         // Name of the data grid: 
         private void FillDataGridFertilisers()
@@ -54,13 +55,12 @@ namespace JustRIpe
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
+                // SQL Statement
                 SqlDataAdapter sqlData = new SqlDataAdapter("SELECT fertiliserName, cropDestined FROM Fertilisers", sqlCon);
                 DataTable FertilisersDataSet = new DataTable();
                 sqlData.Fill(FertilisersDataSet);
                 fertilisersDataGrid.ItemsSource = FertilisersDataSet.DefaultView;
             }
-
-
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
