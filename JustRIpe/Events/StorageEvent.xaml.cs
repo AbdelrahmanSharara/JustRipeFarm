@@ -28,7 +28,7 @@ namespace JustRIpe
         public StorageEvent()
         {
             InitializeComponent(); //storageDataGrid.ItemsSource =
-            FillDataGrid();
+            FillStorageDataGrid();
         }
 
         private void Load_table_Click(object sender, RoutedEventArgs e)
@@ -36,18 +36,32 @@ namespace JustRIpe
 
         }
 
-        private void FillDataGrid()
+        private void FillStorageDataGrid()
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 
                 sqlCon.Open(); //establishing sql connection
-                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Storage", sqlCon); //sql statement
-                DataTable StorageDSet = new DataTable(); //defining dataset
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Storage", sqlCon); //sql statement for storage main
+                DataTable StorageDSet = new DataTable(); //defining storage dataset
 
-                sqlData.Fill(StorageDSet); //filling database
+                sqlData.Fill(StorageDSet); //filling storage database
+                
                 storageDataGrid.ItemsSource = StorageDSet.DefaultView;
             }
+
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open(); //establishing sql connection
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Crops", sqlCon); //sql statement for storage main
+                DataTable CropStock = new DataTable(); //defining crop stock dataset
+
+                sqlData.Fill(CropStock); // filling crop stock
+
+                cropsDataGrid.ItemsSource = CropStock.DefaultView;
+            }
+
+            
 
 
         }
@@ -65,6 +79,11 @@ namespace JustRIpe
         }
 
         private void StorageDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

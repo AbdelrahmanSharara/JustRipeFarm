@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace JustRIpe
 {
@@ -22,8 +23,25 @@ namespace JustRIpe
         public MainEvent()
         {
             InitializeComponent();
+           // startClock();
         }
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+
+        // clock isn't needed
+        /*
+        private void startClock()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += tickevent;
+            timer.Start();
+        }
+        public void tickevent(object sender, EventArgs e)
+        {
+            Clocklbl.Content = DateTime.Now.ToString(@"dd/MM/yyyy [HH:mm]");
+        }
+        */
+
+            private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }

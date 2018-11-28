@@ -6,4 +6,12 @@
              xmlns:local="clr-namespace:JustRIpe"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="White">
+
+
+    <Grid>
+        
+    </Grid>
+
+
+
 </UserControl>
