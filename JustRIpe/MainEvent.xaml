@@ -67,7 +67,7 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    
+
                     <!--Close Navigation Bar Button-->
                     <Button x:Name="CloseMenu" Grid.Row="0" Width="65" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="CloseMenu_Click">
                         <materialDesign:PackIcon Foreground="#FF16AE35" Kind="ArrowLeft" Width="30" Height="30"/>
@@ -77,7 +77,7 @@
                         <materialDesign:PackIcon Foreground="#FF16AE35" Kind="Menu" Width="37" Height="30" Margin="-5" />
                     </Button>
                     <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8 15" Grid.Row="1" Source="logo.jpg" Stretch="Uniform"/>
-                    
+
 
                 </Grid>
 
@@ -109,7 +109,7 @@
                             <TextBlock Text="Crops" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
                         </StackPanel>
                     </ListViewItem>
-    
+
                     <!--The Delivery Button-->
                     <ListViewItem x:Name="Delivery" Padding="0" Height="65">
 
@@ -118,7 +118,7 @@
                             <TextBlock Text="Delivery" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFFFFFF"/>
                         </StackPanel>
                     </ListViewItem>
-                
+
                     <!--The Users Button-->
                     <ListViewItem x:Name="Users" Padding="0" Height="65">
 
@@ -130,6 +130,7 @@
 
                 </ListView>
             </StackPanel>
+            <!--Label Content=""  Name="Clocklbl" FontSize ="18" HorizontalAlignment="right" Margin="0,0,-956,-55" VerticalAlignment="bottom" Height="92" Width="244" HorizontalContentAlignment="right"/>-->
         </Grid>
     </Grid>
 </Window>

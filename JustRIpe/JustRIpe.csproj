@@ -87,6 +87,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CropsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CropStock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CropStock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CropStockDSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CropStockDSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Events\CropsEvent.xaml.cs">
       <DependentUpon>CropsEvent.xaml</DependentUpon>
     </Compile>
@@ -182,6 +192,28 @@
     </None>
     <None Include="CropsDataSet.xss">
       <DependentUpon>CropsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CropStock.xsc">
+      <DependentUpon>CropStock.xsd</DependentUpon>
+    </None>
+    <None Include="CropStock.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CropStock.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CropStock.xss">
+      <DependentUpon>CropStock.xsd</DependentUpon>
+    </None>
+    <None Include="CropStockDSet.xsc">
+      <DependentUpon>CropStockDSet.xsd</DependentUpon>
+    </None>
+    <None Include="CropStockDSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CropStockDSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CropStockDSet.xss">
+      <DependentUpon>CropStockDSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

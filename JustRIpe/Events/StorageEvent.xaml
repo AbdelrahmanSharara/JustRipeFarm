@@ -9,14 +9,18 @@
     <UserControl.Resources>
         <local:StorageDSet x:Key="storageDSet"/>
         <CollectionViewSource x:Key="storageViewSource" Source="{Binding Storage, Source={StaticResource storageDSet}}"/>
+        <local:CropStock x:Key="cropStock"/>
+        <CollectionViewSource x:Key="cropsViewSource" Source="{Binding Crops, Source={StaticResource cropStock}}"/>
+        <local:CropsDataSet x:Key="cropsDataSet"/>
+        <CollectionViewSource x:Key="cropsViewSource1" Source="{Binding Crops, Source={StaticResource cropsDataSet}}"/>
     </UserControl.Resources>
     <Grid DataContext="{StaticResource storageViewSource}">
         <Label Content="Storage" HorizontalAlignment="Left" Margin="383,10,0,0" VerticalAlignment="Top" Height="74" FontSize="36" Width="170"/>
-        <DataGrid x:Name="storageDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="34,118,62,81" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="StorageDataGrid_SelectionChanged">
+        <DataGrid x:Name="storageDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="34,89,62,197.6" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="StorageDataGrid_SelectionChanged">
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White" Offset="0.136"/>
-                    <GradientStop Color="#FFBBD38A" Offset="0.135"/>
+                    <GradientStop Color="White" Offset="0.186"/>
+                    <GradientStop Color="#FFBBD38A" Offset="0.184"/>
                 </LinearGradientBrush>
             </DataGrid.Background>
             <DataGrid.Columns>
@@ -30,6 +34,13 @@
                 <DataGridTextColumn x:Name="maxTempColumn" Binding="{Binding maxTemp}" Header="Max Temp" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
+        <DataGrid x:Name="cropsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource cropsViewSource}}" Margin="34,339,645,38.6" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="cropNameColumn" Binding="{Binding cropName}" Header="Crop Name" Width="SizeToCells"/>
+                <DataGridTextColumn x:Name="currentStatusColumn" Binding="{Binding currentStatus}" Header="Status" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Crop Availability" HorizontalAlignment="Left" Margin="97,301,0,0" VerticalAlignment="Top" Height="74" FontSize="14" Width="170"/>
 
     </Grid>
 </UserControl>
