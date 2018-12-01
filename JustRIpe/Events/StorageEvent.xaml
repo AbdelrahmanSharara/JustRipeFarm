@@ -13,6 +13,8 @@
         <CollectionViewSource x:Key="cropsViewSource" Source="{Binding Crops, Source={StaticResource cropStock}}"/>
         <local:CropsDataSet x:Key="cropsDataSet"/>
         <CollectionViewSource x:Key="cropsViewSource1" Source="{Binding Crops, Source={StaticResource cropsDataSet}}"/>
+        <local:VehicleStock x:Key="vehicleStock"/>
+        <CollectionViewSource x:Key="vehiclesViewSource" Source="{Binding Vehicles, Source={StaticResource vehicleStock}}"/>
     </UserControl.Resources>
     <Grid DataContext="{StaticResource storageViewSource}">
         <Label Content="Storage" HorizontalAlignment="Left" Margin="383,10,0,0" VerticalAlignment="Top" Height="74" FontSize="36" Width="170"/>
@@ -36,12 +38,19 @@
         </DataGrid>
         <DataGrid x:Name="cropsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource cropsViewSource}}" Margin="34,339,645,38.6" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="cropNameColumn" Binding="{Binding cropName}" Header="Crop Name" Width="SizeToCells"/>
+                <DataGridTextColumn x:Name="cropNameColumn" Binding="{Binding cropName}" Header="Name" Width="SizeToCells"/>
                 <DataGridTextColumn x:Name="currentStatusColumn" Binding="{Binding currentStatus}" Header="Status" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Crop Availability" HorizontalAlignment="Left" Margin="97,301,0,0" VerticalAlignment="Top" Height="74" FontSize="14" Width="170"/>
-        <Label Content="Vehicle Availability" HorizontalAlignment="Left" Margin="284,301,0,0" VerticalAlignment="Top" Height="74" FontSize="14" Width="170"/>
+        <Label Content="Vehicle Availability" HorizontalAlignment="Left" Margin="405,301,0,0" VerticalAlignment="Top" Height="74" FontSize="14" Width="170"/>
+        <DataGrid x:Name="vehiclesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource vehiclesViewSource}}" Margin="338,346,315,38.6" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="vehicleIDColumn" Binding="{Binding vehicleID}" Header="ID" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="vehicleNameColumn" Binding="{Binding vehicleName}" Header="Name" Width="SizeToCells"/>
+                <DataGridTextColumn x:Name="vehicleAvailabilityColumn" Binding="{Binding vehicleAvailability}" Header="Status" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </UserControl>

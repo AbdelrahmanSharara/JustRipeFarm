@@ -61,7 +61,16 @@ namespace JustRIpe
                 cropsDataGrid.ItemsSource = CropStock.DefaultView;
             }
 
-            
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open(); //establishing sql connection
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Vehicles", sqlCon); //sql statement for storage main
+                DataTable VehStock = new DataTable(); //defining veh stock dataset
+
+                sqlData.Fill(VehStock); // filling crop stock
+
+                vehiclesDataGrid.ItemsSource = VehStock.DefaultView;
+            } 
 
 
         }

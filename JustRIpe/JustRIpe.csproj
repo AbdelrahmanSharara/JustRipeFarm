@@ -117,6 +117,11 @@
     <Compile Include="Events\TimetableEvent.xaml.cs">
       <DependentUpon>TimetableEvent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VehicleStock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VehicleStock.xsd</DependentUpon>
+    </Compile>
     <Page Include="Events\CropsEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -232,6 +237,17 @@
     </None>
     <None Include="StorageDSet.xss">
       <DependentUpon>StorageDSet.xsd</DependentUpon>
+    </None>
+    <None Include="VehicleStock.xsc">
+      <DependentUpon>VehicleStock.xsd</DependentUpon>
+    </None>
+    <None Include="VehicleStock.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VehicleStock.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VehicleStock.xss">
+      <DependentUpon>VehicleStock.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
