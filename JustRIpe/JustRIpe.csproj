@@ -117,6 +117,11 @@
     <Compile Include="Events\TimetableEvent.xaml.cs">
       <DependentUpon>TimetableEvent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TimetableDSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimetableDSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="VehicleStock.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -237,6 +242,17 @@
     </None>
     <None Include="StorageDSet.xss">
       <DependentUpon>StorageDSet.xsd</DependentUpon>
+    </None>
+    <None Include="TimetableDSet.xsc">
+      <DependentUpon>TimetableDSet.xsd</DependentUpon>
+    </None>
+    <None Include="TimetableDSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TimetableDSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TimetableDSet.xss">
+      <DependentUpon>TimetableDSet.xsd</DependentUpon>
     </None>
     <None Include="VehicleStock.xsc">
       <DependentUpon>VehicleStock.xsd</DependentUpon>
