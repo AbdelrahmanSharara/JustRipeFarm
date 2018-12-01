@@ -41,6 +41,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Crop Availability" HorizontalAlignment="Left" Margin="97,301,0,0" VerticalAlignment="Top" Height="74" FontSize="14" Width="170"/>
+        <Label Content="Vehicle Availability" HorizontalAlignment="Left" Margin="284,301,0,0" VerticalAlignment="Top" Height="74" FontSize="14" Width="170"/>
 
     </Grid>
 </UserControl>
