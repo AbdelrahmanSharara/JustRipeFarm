@@ -285,6 +285,10 @@ namespace JustRIpe {
             
             private global::System.Data.DataColumn columncropDestined;
             
+            private global::System.Data.DataColumn columnammountNeeded;
+            
+            private global::System.Data.DataColumn columnstockNeeded;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public FertilisersDataTable() {
@@ -344,6 +348,22 @@ namespace JustRIpe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ammountNeededColumn {
+                get {
+                    return this.columnammountNeeded;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn stockNeededColumn {
+                get {
+                    return this.columnstockNeeded;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -379,12 +399,14 @@ namespace JustRIpe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public FertilisersRow AddFertilisersRow(string fertiliserName, string cropDestined) {
+            public FertilisersRow AddFertilisersRow(string fertiliserName, string cropDestined, string ammountNeeded, string stockNeeded) {
                 FertilisersRow rowFertilisersRow = ((FertilisersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         fertiliserName,
-                        cropDestined};
+                        cropDestined,
+                        ammountNeeded,
+                        stockNeeded};
                 rowFertilisersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFertilisersRow);
                 return rowFertilisersRow;
@@ -417,6 +439,8 @@ namespace JustRIpe {
                 this.columnfertiliserID = base.Columns["fertiliserID"];
                 this.columnfertiliserName = base.Columns["fertiliserName"];
                 this.columncropDestined = base.Columns["cropDestined"];
+                this.columnammountNeeded = base.Columns["ammountNeeded"];
+                this.columnstockNeeded = base.Columns["stockNeeded"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -428,6 +452,10 @@ namespace JustRIpe {
                 base.Columns.Add(this.columnfertiliserName);
                 this.columncropDestined = new global::System.Data.DataColumn("cropDestined", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncropDestined);
+                this.columnammountNeeded = new global::System.Data.DataColumn("ammountNeeded", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnammountNeeded);
+                this.columnstockNeeded = new global::System.Data.DataColumn("stockNeeded", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstockNeeded);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnfertiliserID}, true));
                 this.columnfertiliserID.AutoIncrement = true;
@@ -438,6 +466,8 @@ namespace JustRIpe {
                 this.columnfertiliserID.Unique = true;
                 this.columnfertiliserName.MaxLength = 50;
                 this.columncropDestined.MaxLength = 50;
+                this.columnammountNeeded.MaxLength = 50;
+                this.columnstockNeeded.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -623,6 +653,38 @@ namespace JustRIpe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ammountNeeded {
+                get {
+                    try {
+                        return ((string)(this[this.tableFertilisers.ammountNeededColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ammountNeeded\' in table \'Fertilisers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFertilisers.ammountNeededColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string stockNeeded {
+                get {
+                    try {
+                        return ((string)(this[this.tableFertilisers.stockNeededColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'stockNeeded\' in table \'Fertilisers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFertilisers.stockNeededColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsfertiliserNameNull() {
                 return this.IsNull(this.tableFertilisers.fertiliserNameColumn);
             }
@@ -643,6 +705,30 @@ namespace JustRIpe {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetcropDestinedNull() {
                 this[this.tableFertilisers.cropDestinedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsammountNeededNull() {
+                return this.IsNull(this.tableFertilisers.ammountNeededColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetammountNeededNull() {
+                this[this.tableFertilisers.ammountNeededColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstockNeededNull() {
+                return this.IsNull(this.tableFertilisers.stockNeededColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstockNeededNull() {
+                this[this.tableFertilisers.stockNeededColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -808,36 +894,49 @@ namespace JustRIpe.FertilisersDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("fertiliserID", "fertiliserID");
             tableMapping.ColumnMappings.Add("fertiliserName", "fertiliserName");
             tableMapping.ColumnMappings.Add("cropDestined", "cropDestined");
+            tableMapping.ColumnMappings.Add("ammountNeeded", "ammountNeeded");
+            tableMapping.ColumnMappings.Add("stockNeeded", "stockNeeded");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Fertilisers] WHERE (([fertiliserID] = @Original_fertiliserID) AND ((@IsNull_fertiliserName = 1 AND [fertiliserName] IS NULL) OR ([fertiliserName] = @Original_fertiliserName)) AND ((@IsNull_cropDestined = 1 AND [cropDestined] IS NULL) OR ([cropDestined] = @Original_cropDestined)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Fertilisers] WHERE (([fertiliserID] = @Original_fertiliserID) AND ((@IsNull_fertiliserName = 1 AND [fertiliserName] IS NULL) OR ([fertiliserName] = @Original_fertiliserName)) AND ((@IsNull_cropDestined = 1 AND [cropDestined] IS NULL) OR ([cropDestined] = @Original_cropDestined)) AND ((@IsNull_ammountNeeded = 1 AND [ammountNeeded] IS NULL) OR ([ammountNeeded] = @Original_ammountNeeded)) AND ((@IsNull_stockNeeded = 1 AND [stockNeeded] IS NULL) OR ([stockNeeded] = @Original_stockNeeded)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fertiliserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fertiliserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_fertiliserName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fertiliserName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fertiliserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fertiliserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cropDestined", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cropDestined", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cropDestined", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cropDestined", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ammountNeeded", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ammountNeeded", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ammountNeeded", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ammountNeeded", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_stockNeeded", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stockNeeded", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stockNeeded", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stockNeeded", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Fertilisers] ([fertiliserName], [cropDestined]) VALUES (@ferti" +
-                "liserName, @cropDestined);\r\nSELECT fertiliserID, fertiliserName, cropDestined FR" +
-                "OM Fertilisers WHERE (fertiliserID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Fertilisers] ([fertiliserName], [cropDestined], [ammountNeeded], [stockNeeded]) VALUES (@fertiliserName, @cropDestined, @ammountNeeded, @stockNeeded);
+SELECT fertiliserID, fertiliserName, cropDestined, ammountNeeded, stockNeeded FROM Fertilisers WHERE (fertiliserID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fertiliserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fertiliserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cropDestined", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cropDestined", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ammountNeeded", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ammountNeeded", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stockNeeded", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stockNeeded", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Fertilisers] SET [fertiliserName] = @fertiliserName, [cropDestined] = @cropDestined WHERE (([fertiliserID] = @Original_fertiliserID) AND ((@IsNull_fertiliserName = 1 AND [fertiliserName] IS NULL) OR ([fertiliserName] = @Original_fertiliserName)) AND ((@IsNull_cropDestined = 1 AND [cropDestined] IS NULL) OR ([cropDestined] = @Original_cropDestined)));
-SELECT fertiliserID, fertiliserName, cropDestined FROM Fertilisers WHERE (fertiliserID = @fertiliserID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Fertilisers] SET [fertiliserName] = @fertiliserName, [cropDestined] = @cropDestined, [ammountNeeded] = @ammountNeeded, [stockNeeded] = @stockNeeded WHERE (([fertiliserID] = @Original_fertiliserID) AND ((@IsNull_fertiliserName = 1 AND [fertiliserName] IS NULL) OR ([fertiliserName] = @Original_fertiliserName)) AND ((@IsNull_cropDestined = 1 AND [cropDestined] IS NULL) OR ([cropDestined] = @Original_cropDestined)) AND ((@IsNull_ammountNeeded = 1 AND [ammountNeeded] IS NULL) OR ([ammountNeeded] = @Original_ammountNeeded)) AND ((@IsNull_stockNeeded = 1 AND [stockNeeded] IS NULL) OR ([stockNeeded] = @Original_stockNeeded)));
+SELECT fertiliserID, fertiliserName, cropDestined, ammountNeeded, stockNeeded FROM Fertilisers WHERE (fertiliserID = @fertiliserID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fertiliserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fertiliserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cropDestined", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cropDestined", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ammountNeeded", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ammountNeeded", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stockNeeded", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stockNeeded", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fertiliserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fertiliserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_fertiliserName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fertiliserName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fertiliserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fertiliserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cropDestined", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cropDestined", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cropDestined", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cropDestined", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ammountNeeded", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ammountNeeded", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ammountNeeded", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ammountNeeded", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_stockNeeded", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stockNeeded", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stockNeeded", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stockNeeded", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fertiliserID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "fertiliserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -854,7 +953,8 @@ SELECT fertiliserID, fertiliserName, cropDestined FROM Fertilisers WHERE (fertil
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT fertiliserID, fertiliserName, cropDestined FROM dbo.Fertilisers";
+            this._commandCollection[0].CommandText = "SELECT fertiliserID, fertiliserName, cropDestined, ammountNeeded, stockNeeded FRO" +
+                "M Fertilisers";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -915,7 +1015,7 @@ SELECT fertiliserID, fertiliserName, cropDestined FROM Fertilisers WHERE (fertil
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_fertiliserID, string Original_fertiliserName, string Original_cropDestined) {
+        public virtual int Delete(int Original_fertiliserID, string Original_fertiliserName, string Original_cropDestined, string Original_ammountNeeded, string Original_stockNeeded) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_fertiliserID));
             if ((Original_fertiliserName == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -932,6 +1032,22 @@ SELECT fertiliserID, fertiliserName, cropDestined FROM Fertilisers WHERE (fertil
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_cropDestined));
+            }
+            if ((Original_ammountNeeded == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_ammountNeeded));
+            }
+            if ((Original_stockNeeded == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_stockNeeded));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -953,7 +1069,7 @@ SELECT fertiliserID, fertiliserName, cropDestined FROM Fertilisers WHERE (fertil
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string fertiliserName, string cropDestined) {
+        public virtual int Insert(string fertiliserName, string cropDestined, string ammountNeeded, string stockNeeded) {
             if ((fertiliserName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -965,6 +1081,18 @@ SELECT fertiliserID, fertiliserName, cropDestined FROM Fertilisers WHERE (fertil
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(cropDestined));
+            }
+            if ((ammountNeeded == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(ammountNeeded));
+            }
+            if ((stockNeeded == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(stockNeeded));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -986,7 +1114,7 @@ SELECT fertiliserID, fertiliserName, cropDestined FROM Fertilisers WHERE (fertil
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string fertiliserName, string cropDestined, int Original_fertiliserID, string Original_fertiliserName, string Original_cropDestined, int fertiliserID) {
+        public virtual int Update(string fertiliserName, string cropDestined, string ammountNeeded, string stockNeeded, int Original_fertiliserID, string Original_fertiliserName, string Original_cropDestined, string Original_ammountNeeded, string Original_stockNeeded, int fertiliserID) {
             if ((fertiliserName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -999,24 +1127,52 @@ SELECT fertiliserID, fertiliserName, cropDestined FROM Fertilisers WHERE (fertil
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(cropDestined));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_fertiliserID));
-            if ((Original_fertiliserName == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((ammountNeeded == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_fertiliserName));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(ammountNeeded));
             }
-            if ((Original_cropDestined == null)) {
+            if ((stockNeeded == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(stockNeeded));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_fertiliserID));
+            if ((Original_fertiliserName == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_cropDestined));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_fertiliserName));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(fertiliserID));
+            if ((Original_cropDestined == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_cropDestined));
+            }
+            if ((Original_ammountNeeded == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_ammountNeeded));
+            }
+            if ((Original_stockNeeded == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_stockNeeded));
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(fertiliserID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1037,8 +1193,8 @@ SELECT fertiliserID, fertiliserName, cropDestined FROM Fertilisers WHERE (fertil
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string fertiliserName, string cropDestined, int Original_fertiliserID, string Original_fertiliserName, string Original_cropDestined) {
-            return this.Update(fertiliserName, cropDestined, Original_fertiliserID, Original_fertiliserName, Original_cropDestined, Original_fertiliserID);
+        public virtual int Update(string fertiliserName, string cropDestined, string ammountNeeded, string stockNeeded, int Original_fertiliserID, string Original_fertiliserName, string Original_cropDestined, string Original_ammountNeeded, string Original_stockNeeded) {
+            return this.Update(fertiliserName, cropDestined, ammountNeeded, stockNeeded, Original_fertiliserID, Original_fertiliserName, Original_cropDestined, Original_ammountNeeded, Original_stockNeeded, Original_fertiliserID);
         }
     }
     

@@ -28,12 +28,9 @@ namespace JustRIpe
         public CropsEvent()
         {
             InitializeComponent();
-            FillDataGridCrops();
-            FillDataGridFertilisers();
         }
 
         // Fills the data grid for displaying Crops currently in cultivation
-        // Name of the data grid: CropsDataSet
         private void FillDataGridCrops()
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
@@ -48,16 +45,29 @@ namespace JustRIpe
 
         }
         // Fills the data grid for displaying
-        // Name of the data grid: 
-        private void FillDataGridFertilisers()
+        private void FillDataGridFertilisersPlan()
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT fertiliserName, cropDestined FROM Fertilisers", sqlCon);
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT cropDestined, fertiliserName, ammountNeeded FROM Fertilisers", sqlCon);
                 DataTable FertilisersDataSet = new DataTable();
                 sqlData.Fill(FertilisersDataSet);
-                fertilisersDataGrid.ItemsSource = FertilisersDataSet.DefaultView;
+                fertilisersPlanDataGrid.ItemsSource = FertilisersDataSet.DefaultView;
+            }
+
+
+        }
+        // Fills the data grid for displaying
+        private void FillDataGridFertilisersStock()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT fertiliserName, stockNeeded FROM Fertilisers", sqlCon);
+                DataTable FertilisersDataSet = new DataTable();
+                sqlData.Fill(FertilisersDataSet);
+                fertilisersPlanDataGrid.ItemsSource = FertilisersDataSet.DefaultView;
             }
 
 
@@ -73,6 +83,24 @@ namespace JustRIpe
             // 	System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["Resource Key for CollectionViewSource"];
             // 	myCollectionViewSource.Source = your data
             // }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        // Button for Crops current in cultivation
+        {
+            FillDataGridCrops();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        // Button for amount and type fertiliser needed
+        {
+            FillDataGridFertilisersPlan();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        // Button for feritiliser stock
+        {
+            FillDataGridFertilisersStock();
         }
     }
 }

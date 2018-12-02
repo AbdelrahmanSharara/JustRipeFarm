@@ -13,7 +13,7 @@
         <CollectionViewSource x:Key="fertilisersViewSource" Source="{Binding Fertilisers, Source={StaticResource fertilisersDataSet}}"/>
     </UserControl.Resources>
     <Grid DataContext="{StaticResource cropsViewSource}">
-        <DataGrid x:Name="cropsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="65,94,578,217" RowDetailsVisibilityMode="VisibleWhenSelected" IsSynchronizedWithCurrentItem="True">
+        <DataGrid x:Name="cropsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="538,62,105,269" RowDetailsVisibilityMode="VisibleWhenSelected" IsSynchronizedWithCurrentItem="True">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="cropIDColumn" Binding="{Binding cropID}" Header="crop ID" IsReadOnly="True" Width="SizeToHeader" Visibility="Hidden"/>
                 <DataGridTextColumn x:Name="fertiliserIDColumn" Binding="{Binding fertiliserID}" Header="fertiliser ID" Width="SizeToHeader" Visibility="Hidden"/>
@@ -22,18 +22,10 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Crops" HorizontalAlignment="Left" Margin="340,10,0,0" VerticalAlignment="Top" Height="57" Width="150" FontSize="36" FontFamily="Rockwell Extra Bold" Background="White"/>
-        <Label Content="Crops currently in cultivation" HorizontalAlignment="Left" Margin="65,67,0,0" VerticalAlignment="Top" Width="250" FontFamily="Showcard Gothic" FontSize="14"/>
-        <Label Content="Types of fertilisers" HorizontalAlignment="Left" Margin="477,68,0,0" VerticalAlignment="Top" Width="189" FontFamily="Showcard Gothic" FontSize="14" RenderTransformOrigin="0.5,0.5">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.327"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <DataGrid x:Name="fertilisersDataGrid" HorizontalAlignment="Left" Height="167" Margin="477,94,0,0" VerticalAlignment="Top" Width="313" ItemsSource="{Binding Source={StaticResource fertilisersViewSource}}"/>
+        <Button Content="Crops in Cultivation" HorizontalAlignment="Left" Margin="45,75,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click"/>
+        <Button Content="Fertiliser Plan" HorizontalAlignment="Left" Margin="45,112,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click_1"/>
+        <Button Content="Fertiliser Stock" HorizontalAlignment="Left" Margin="45,149,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click_2"/>
+        <DataGrid x:Name="fertilisersPlanDataGrid" HorizontalAlignment="Left" Height="170" Margin="45,201,0,0" VerticalAlignment="Top" Width="542" ItemsSource="{Binding Source={StaticResource fertilisersViewSource}}"/>
 
     </Grid>
 </UserControl>
