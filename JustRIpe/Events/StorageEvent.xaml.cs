@@ -27,13 +27,8 @@ namespace JustRIpe
         string connectionString = Properties.Settings.Default.DBAccess;
         public StorageEvent()
         {
-            InitializeComponent(); //storageDataGrid.ItemsSource =
-            FillStorageDataGrid();
-        }
-
-        private void Load_table_Click(object sender, RoutedEventArgs e)
-        {
-
+            InitializeComponent(); 
+            FillStorageDataGrid(); //intilises all code in the FillStorageDataGrid()
         }
 
         private void FillStorageDataGrid()
@@ -43,37 +38,39 @@ namespace JustRIpe
                 
                 sqlCon.Open(); //establishing sql connection
                 SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Storage", sqlCon); //sql statement for storage main
-                DataTable StorageDSet = new DataTable(); //defining storage dataset
+                DataTable StorageDSet = new DataTable(); //defining storage datatable
 
-                sqlData.Fill(StorageDSet); //filling storage database
+                sqlData.Fill(StorageDSet); //filling storage datatable
                 
-                storageDataGrid.ItemsSource = StorageDSet.DefaultView;
+                storageDataGrid.ItemsSource = StorageDSet.DefaultView; //filling storage datagrid
             }
 
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open(); //establishing sql connection
                 SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Crops", sqlCon); //sql statement for storage main
-                DataTable CropStock = new DataTable(); //defining crop stock dataset
+                DataTable CropStock = new DataTable(); //defining crop stock datatable
 
-                sqlData.Fill(CropStock); // filling crop stock
+                sqlData.Fill(CropStock); //filling crop stock datatable
 
-                cropsDataGrid.ItemsSource = CropStock.DefaultView;
+                cropsDataGrid.ItemsSource = CropStock.DefaultView; //filling crop availability datagrid
             }
 
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open(); //establishing sql connection
                 SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Vehicles", sqlCon); //sql statement for storage main
-                DataTable VehStock = new DataTable(); //defining veh stock dataset
+                DataTable VehStock = new DataTable(); //defining veh stock datatable
 
-                sqlData.Fill(VehStock); // filling crop stock
+                sqlData.Fill(VehStock); //filling vehicle stock datatable
 
-                vehiclesDataGrid.ItemsSource = VehStock.DefaultView;
+                vehiclesDataGrid.ItemsSource = VehStock.DefaultView; //filling vehicle availability datagrid
             } 
 
 
         }
+
+        
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -88,11 +85,6 @@ namespace JustRIpe
         }
 
         private void StorageDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

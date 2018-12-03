@@ -26,7 +26,7 @@ namespace JustRIpe
         public TimetableEvent()
         {
             InitializeComponent();
-            FillEventDataGrid();
+            FillEventDataGrid(); //intilises all code in the FillEventDataGrid()
         }
 
         string connectionString = Properties.Settings.Default.DBAccess;
@@ -39,11 +39,11 @@ namespace JustRIpe
                 sqlCon.Open(); //establishing sql connection
                 SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Events", sqlCon);
                     //("SELECT eventID, `Crops`.`cropName`, `Vehicles`.`vehicleName`, eventName, eventDescription, eventDate, eventTime FROM `Events` LEFT JOIN `Crops` ON `Events`.`cropID` = `Crops`.`cropsID`", sqlCon); //sql statement for event main
-                DataTable TimetableDSet = new DataTable(); //defining storage dataset
+                DataTable TimetableDSet = new DataTable(); //defining storage datatable
 
-                sqlData.Fill(TimetableDSet); //filling timetable database
+                sqlData.Fill(TimetableDSet); //filling timetable datatable
 
-                eventsDataGrid.ItemsSource = TimetableDSet.DefaultView;
+                eventsDataGrid.ItemsSource = TimetableDSet.DefaultView; //filling timetable datagrid
             }
 
         }
