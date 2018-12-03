@@ -13,6 +13,12 @@
     <Grid DataContext="{StaticResource eventsViewSource1}">
         <Label Content="Timetable" HorizontalAlignment="Left" Margin="383,10,0,0" VerticalAlignment="Top" Height="74" FontSize="36" Width="170"/>
         <DataGrid x:Name="eventsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource eventsViewSource1}}" Margin="10,84,10,35.6" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.111"/>
+                    <GradientStop Color="#DDB97938" Offset="0.11"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="eventIDColumn" Binding="{Binding eventID}" Header="Event ID" IsReadOnly="True" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="cropIDColumn" Binding="{Binding cropID}" Header="Crop ID" Width="SizeToHeader"/>
