@@ -7,22 +7,6 @@
         xmlns:local="clr-namespace:JustRIpe"
         mc:Ignorable="d"
         Title="JustRipe" Height="600" Width="1024" ResizeMode="NoResize" WindowStyle="None" Foreground="White" WindowStartupLocation="CenterScreen">
-    <Window.Resources>
-        <!--Navigation bar show animation-->
-        <Storyboard x:Key="MenuOn">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Menu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="65"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="215"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
-        <!--Navigation bar hide animation-->
-        <Storyboard x:Key="MenuOff">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Menu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="215"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="65"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
-    </Window.Resources>
 
     <Window.Triggers>
         <!--Open Trigger-->
@@ -35,6 +19,26 @@
             <BeginStoryboard Storyboard="{StaticResource MenuOff}"/>
         </EventTrigger>
     </Window.Triggers>
+    
+    <!--Navigation Bar Animations-->
+    <Window.Resources>
+        <!--Navigation bar show animation-->
+        
+        <Storyboard x:Key="MenuOn">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Menu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="65"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="220"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        
+        <!--Navigation bar hide animation-->   
+        <Storyboard x:Key="MenuOff">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Menu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="220"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="65"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
 
 
     <Grid MouseDown="Grid_MouseDown">
@@ -96,7 +100,7 @@
                     </ListViewItem>
 
                     <!--The Storage Button-->
-                    <ListViewItem x:Name="Storage" Padding="1" Height="65">
+                    <ListViewItem x:Name="Storage" Padding="0" Height="65">
 
                         <StackPanel Orientation="Horizontal" Width="auto" Height="65">
                             <materialDesign:PackIcon Kind="NetworkAttachedStorage" Width="30" Margin="17.5 0" Height="30" VerticalAlignment="Center" Foreground="#DDF7F7F7"/>
@@ -105,7 +109,7 @@
                     </ListViewItem>
 
                     <!-- The Crops Button-->
-                    <ListViewItem x:Name="Crops" Padding="1" Height="65">
+                    <ListViewItem x:Name="Crops" Padding="0" Height="65">
 
                         <StackPanel Orientation="Horizontal" Width="auto" Height="65">
                             <materialDesign:PackIcon Kind="Leaf" Width="30" Margin="17.5 0" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
@@ -114,7 +118,7 @@
                     </ListViewItem>
 
                     <!--The Delivery Button-->
-                    <ListViewItem x:Name="Delivery" Padding="1" Height="65">
+                    <ListViewItem x:Name="Delivery" Padding="0" Height="65">
 
                         <StackPanel Orientation="Horizontal" Width="auto" Height="65">
                             <materialDesign:PackIcon Kind="TruckDelivery" Width="30" Margin="17.5 0" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
@@ -123,7 +127,7 @@
                     </ListViewItem>
 
                     <!--The Timetable Button-->
-                    <ListViewItem x:Name="Timetable" Padding="1" Height="65">
+                    <ListViewItem x:Name="Timetable" Padding="0" Height="65">
 
                         <StackPanel Orientation="Horizontal" Width="auto" Height="65">
                             <materialDesign:PackIcon Kind="Calendar" Width="30" Margin="17.5 0" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
@@ -132,7 +136,7 @@
                     </ListViewItem>
 
                     <!--The Users Button-->
-                    <ListViewItem x:Name="Users" Padding="1" Height="65">
+                    <ListViewItem x:Name="Users" Padding="0" Height="65">
 
                         <StackPanel Orientation="Horizontal" Width="auto" Height="65">
                             <materialDesign:PackIcon Kind="UserSettingsVariant" Width="30" Margin="17.5 0" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
