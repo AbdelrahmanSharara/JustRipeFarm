@@ -45,7 +45,7 @@ namespace JustRIpe
 
         }
 
-        public static string CheckPerm(string username)
+        public static string RoleCheck(string username)
         { string connectionString = Properties.Settings.Default.DBAccess;
             DatabaseTransmission DBAcc = new DatabaseTransmission(connectionString);
             DataSet dataSet = new DataSet();
