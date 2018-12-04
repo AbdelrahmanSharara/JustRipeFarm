@@ -17,14 +17,20 @@
         
         <!--Row Definitions instead margin property-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" MinHeight="49"/>
-            <RowDefinition Height="352"/>
-            <RowDefinition Height="135"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            
         </Grid.RowDefinitions>
         
+        <!--Progress bar-->
+        <Grid Grid.Row="1" >
+            
+        </Grid>
         
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="3">
+            
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <!--Margin="350,0,-350,0"-->
                 
@@ -48,7 +54,7 @@
             
         </Grid>
         <Grid Margin="0,0,316,19"/>
-        <Grid  x:Name="GridTitle" Grid.ColumnSpan="2" Background="#FF2BAA45" Margin="0,0,0,19"  >
+        <Grid x:Name="GridTitle" Grid.Row="0" Background="#FF2BAA45" >
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 
@@ -70,7 +76,7 @@
             </StackPanel>
 
         </Grid>
-        <Image Margin="22,31,0,0" Source="mainlogo.jpg" StretchDirection="DownOnly" Stretch="Fill" Grid.RowSpan="2" HorizontalAlignment="Center" Width="368" Height="370" VerticalAlignment="Top" Grid.Column="1"/>
+        <Image Grid.Row="2" Source="mainlogo.jpg" StretchDirection="DownOnly" Stretch="Fill" HorizontalAlignment="Center" Width="368" Height="370" VerticalAlignment="Center"/>
         <Grid Margin="0,0,316,19"/>
     </Grid>
 
