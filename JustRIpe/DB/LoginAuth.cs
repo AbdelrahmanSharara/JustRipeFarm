@@ -9,9 +9,9 @@ namespace JustRIpe
 {
     class LoginAuth
     {
-        private static bool verified = false;
+        private static bool verify = false;
 
-        public static bool Verified { get => verified; }
+        public static bool Verified { get => verify; }
 
         
 
@@ -31,16 +31,16 @@ namespace JustRIpe
 
             if (dataSet.Tables[0].Rows.Count == 1)
             {
-                verified = true;
+                verify = true;
 
             }
 
             else
-            { verified = false; }
+            { verify = false; }
 
             DBAcc.closeConnection();
 
-            return Verified;
+            return verify;
 
 
         }
