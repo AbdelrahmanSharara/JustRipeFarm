@@ -79,10 +79,10 @@ namespace JustRIpe
                     tab = new TimetableEvent();
                     EventCenter.Children.Add(tab);
                     break;
-                case "Users":
-                    tab = new UsersEvent();
-                    EventCenter.Children.Add(tab);
-                    break;
+               case "Users":
+                   tab = new UserEvent();
+                   EventCenter.Children.Add(tab);
+                   break;
                 default:
                     break;
 

@@ -12,23 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data.Sql;
-using System.Data.SqlClient;
-using System.Data;
-
 
 namespace JustRIpe
 {
     /// <summary>
-    /// Interaction logic for UsersEvent.xaml
+    /// Interaction logic for UserEvent.xaml
     /// </summary>
-    public partial class UsersEvent : UserControl
+    public partial class UserEvent : UserControl
     {
-        string connectionString = Properties.Settings.Default.DBAccess;
-        public UsersEvent()
+        public UserEvent()
         {
             InitializeComponent();
         }
-
     }
 }

@@ -101,9 +101,6 @@
     <Compile Include="Events\StorageEvent.xaml.cs">
       <DependentUpon>StorageEvent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Events\UsersEvent.xaml.cs">
-      <DependentUpon>UsersEvent.xaml</DependentUpon>
-    </Compile>
     <Compile Include="FertilisersDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -121,6 +118,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TimetableDSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Events\UserEvent.xaml.cs">
+      <DependentUpon>UserEvent.xaml</DependentUpon>
     </Compile>
     <Compile Include="VehicleStock.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -167,11 +167,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Events\UsersEvent.xaml">
+    <Page Include="Events\TimetableEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Events\TimetableEvent.xaml">
+    <Page Include="Events\UserEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
