@@ -13,14 +13,13 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
-
         </Grid.ColumnDefinitions>
         
+        <!--Row Definitions instead margin property-->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="49"/>
             <RowDefinition Height="352"/>
             <RowDefinition Height="135"/>
-            <RowDefinition Height="29*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         
@@ -32,13 +31,13 @@
                 
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Account" Foreground="{Binding ElementName=Username_txt, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0,4"/>
-                    <TextBox x:Name="Username_txt" Width="300" materialDesign:HintAssist.Hint="Username" materialDesign:HintAssist.IsFloating="True"/>
+                    <TextBox x:Name="Username_txt" Width="310" materialDesign:HintAssist.Hint="Username" materialDesign:HintAssist.IsFloating="True"/>
                 </StackPanel>
                 
                 <!--The Password Bar-->
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Key" Foreground="{Binding ElementName=Password_txt, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0,4"/>
-                    <PasswordBox x:Name="Password_txt" Width="300" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True" KeyDown="Password_txt_KeyDown" />
+                    <PasswordBox x:Name="Password_txt" Width="310" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True" KeyDown="Password_txt_KeyDown" />
                 </StackPanel>
                 
                 <!--Sign in Button-->
