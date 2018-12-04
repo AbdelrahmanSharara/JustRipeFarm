@@ -6,8 +6,28 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:JustRIpe"
         mc:Ignorable="d"
-        Title="JustRipe" Height="600" Width="1024" ResizeMode="NoResize" WindowStyle="None" Foreground="White" WindowStartupLocation="CenterScreen">
+        Title="JustRipe" Height="600" Width="1024" ResizeMode="CanResizeWithGrip" AllowsTransparency="True" WindowStyle="None" Foreground="White" WindowStartupLocation="CenterScreen">
 
+    <!--Navigation Bar Animations-->
+    <Window.Resources>
+        <!--Navigation bar show animation-->
+
+        <Storyboard x:Key="MenuOn">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Menu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="65"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="220"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <!--Navigation bar hide animation-->
+        <Storyboard x:Key="MenuOff">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Menu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="220"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="65"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    
     <Window.Triggers>
         <!--Open Trigger-->
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="OpenMenu">
@@ -20,25 +40,7 @@
         </EventTrigger>
     </Window.Triggers>
     
-    <!--Navigation Bar Animations-->
-    <Window.Resources>
-        <!--Navigation bar show animation-->
-        
-        <Storyboard x:Key="MenuOn">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Menu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="65"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="220"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
-        
-        <!--Navigation bar hide animation-->   
-        <Storyboard x:Key="MenuOff">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Menu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="220"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="65"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
-    </Window.Resources>
+
 
 
     <Grid MouseDown="Grid_MouseDown">
