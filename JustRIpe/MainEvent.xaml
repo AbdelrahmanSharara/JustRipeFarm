@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:JustRIpe"
         mc:Ignorable="d"
-        Title="JustRipe" Height="600" Width="1024" ResizeMode="CanResizeWithGrip" AllowsTransparency="True" WindowStyle="None" Foreground="White" WindowStartupLocation="CenterScreen">
+        Title="JustRipe" Height="600" Width="1024" ResizeMode="NoResize"  WindowStyle="None" Foreground="White" WindowStartupLocation="CenterScreen">
 
     <!--Navigation Bar Animations-->
     <Window.Resources>

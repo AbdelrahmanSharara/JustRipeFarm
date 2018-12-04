@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:JustRIpe"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="JustRipe" Height="600" Width="1024" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" ResizeMode="CanResizeWithGrip">
+        Title="JustRipe" Height="600" Width="1024" WindowStartupLocation="CenterScreen" WindowStyle="None"  ResizeMode="NoResize">
 
     <Grid MouseDown="Grid_MouseDown">
         <!--Adjust the grid  sizes-->
