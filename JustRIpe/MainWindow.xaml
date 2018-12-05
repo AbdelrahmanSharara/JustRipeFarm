@@ -26,13 +26,13 @@
         
         <!--Progress bar-->
         <Grid Grid.Row="1" >
-            
+            <ProgressBar IsIndeterminate="True" Foreground="#FF2BAA45" Background="White" BorderBrush="White"  />
         </Grid>
         
         <Grid Grid.Row="3">
             
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                <!--Margin="350,0,-350,0"-->
+                
                 
                 <!--The Username Bar-->
                 
