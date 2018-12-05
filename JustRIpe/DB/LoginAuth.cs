@@ -21,8 +21,7 @@ namespace JustRIpe
             DatabaseTransmission DBAcc = new DatabaseTransmission(connectionString);
             DataSet dataSet = new DataSet();
 
-            DBAcc.openConnection();
-
+           
 
             string sqlStatement = ("SELECT * FROM LoginDB WHERE username = '" + username + "' AND password= '" + password + "'");
 
@@ -32,29 +31,23 @@ namespace JustRIpe
             if (dataSet.Tables[0].Rows.Count == 1)
             {
                 verify = true;
-
             }
 
             else
             { verify = false; }
-
-            DBAcc.closeConnection();
-
             return verify;
-
-
         }
 
         public static string RoleCheck(string username)
         { string connectionString = Properties.Settings.Default.DBAccess;
             DatabaseTransmission DBAcc = new DatabaseTransmission(connectionString);
             DataSet dataSet = new DataSet();
-            DBAcc.openConnection();
+
 
             string sqlStatementperm = ("SELECT permissions FROM LoginDB WHERE username = '" + username + "'");
 
             dataSet = DBAcc.getDataSet(sqlStatementperm);
-            DBAcc.closeConnection();
+            
             return dataSet.Tables[0].Rows[0].ItemArray[0].ToString();
         }
     }

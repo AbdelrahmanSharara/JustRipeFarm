@@ -30,11 +30,15 @@ namespace JustRIpe
 
         public DataSet getDataSet(string sqlStatement)
         {
+            openConnection();
             DataSet dataSet;
+            
             dataAdapter = new SqlDataAdapter(sqlStatement, connectionToDB);
             dataSet = new DataSet();
             dataAdapter.Fill(dataSet);
+            closeConnection();
             return dataSet;
+            
         }
 
 
