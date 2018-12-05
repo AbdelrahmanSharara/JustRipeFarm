@@ -26,7 +26,7 @@
         
         <!--Progress bar-->
         <Grid Grid.Row="1" >
-            <ProgressBar IsIndeterminate="True" Foreground="#FF2BAA45" Background="White" BorderBrush="White"  />
+            <ProgressBar x:Name="progbar" IsIndeterminate="True" Foreground="#FF2BAA45" Background="White" BorderBrush="White"  />
         </Grid>
         
         <Grid Grid.Row="3">

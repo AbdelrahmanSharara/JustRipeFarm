@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace JustRIpe
 {
@@ -23,6 +24,7 @@ namespace JustRIpe
         public MainWindow()
         {
             InitializeComponent();
+            progbar.Opacity = 0;
         }
 
         //verify the login using the database 
@@ -30,7 +32,7 @@ namespace JustRIpe
         {
             if (LoginAuth.VerifyLogin(Username_txt.Text, Password_txt.Password))
             {
-                MessageBox.Show("Login successful!");
+                
                 MainEvent window = new MainEvent();
                 window.Show();
                 this.Close();
@@ -40,7 +42,10 @@ namespace JustRIpe
 
             }
             else
-            { MessageBox.Show("Incorrect details. Please try again."); }
+            {
+                progbar.Opacity = 0;
+                MessageBox.Show("Incorrect details. Please try again.");
+            }
         }
 
         //The close button
@@ -60,10 +65,11 @@ namespace JustRIpe
             DragMove();
         }
 
-        private void SignInButton_Click(object sender, RoutedEventArgs e)
+        private async void SignInButton_Click(object sender, RoutedEventArgs e)
         {
 
-
+            progbar.Opacity = 1;
+            await Task.Delay(1000);
             LoginInit();
            
         }
