@@ -23,7 +23,9 @@ namespace JustRIpe
     {
         public MainWindow()
         {
+            
             InitializeComponent();
+            progbar.IsIndeterminate = true;
             progbar.Opacity = 0;
         }
 
