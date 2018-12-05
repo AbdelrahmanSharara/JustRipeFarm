@@ -28,6 +28,8 @@ namespace JustRIpe
         public CropsEvent()
         {
             InitializeComponent();
+            cropsDataGrid.Visibility = Visibility.Hidden;
+            fertilisersPlanDataGrid.Visibility = Visibility.Hidden;
         }
 
         // Fills the data grid for displaying Crops currently in cultivation
@@ -88,18 +90,24 @@ namespace JustRIpe
         private void Button_Click(object sender, RoutedEventArgs e)
         // Button for Crops current in cultivation
         {
+            fertilisersPlanDataGrid.Visibility = Visibility.Hidden;
+            cropsDataGrid.Visibility = Visibility.Visible;
             FillDataGridCrops();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         // Button for amount and type fertiliser needed
         {
+            cropsDataGrid.Visibility = Visibility.Hidden;
+            fertilisersPlanDataGrid.Visibility = Visibility.Visible;
             FillDataGridFertilisersPlan();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         // Button for feritiliser stock
         {
+            cropsDataGrid.Visibility = Visibility.Hidden;
+            fertilisersPlanDataGrid.Visibility = Visibility.Visible;
             FillDataGridFertilisersStock();
         }
     }
