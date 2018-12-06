@@ -57,6 +57,7 @@ namespace JustRIpe
 
             switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
             {
+
                 case "Dashboard":
                     tab = new DashboardEvent();
                     EventCenter.Children.Add(tab);
