@@ -52,9 +52,9 @@
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
             </Grid.Effect>
-            <StackPanel>
-
-            </StackPanel>
+          
+            
+            <!--User name Display-->
             <TextBlock x:Name="UserView" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Padding="0" FontFamily="OpenDyslexic" Margin="360,0,278,0" Width="386" ></TextBlock>
             <StackPanel>
 
@@ -65,9 +65,10 @@
 
 
                         <!--Signout Button-->
-                        <Button x:Name="Signoutbt" Content="Sign out" Click="Signoutbt_Click"/>
+                        <Button x:Name="Signoutbt" Content="Sign out" Click="Signoutbt_Click" />
+                        
                         <!--Exit Button-->
-                        <Button x:Name="Exitbt" Content="Exit" Click="Exitbt_Click"/>
+                        <Button x:Name="Exitbt" Content="Exit" Click="Exitbt_Click" />
 
                     </StackPanel>
                 </materialDesign:PopupBox>

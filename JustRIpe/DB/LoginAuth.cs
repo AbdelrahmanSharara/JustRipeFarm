@@ -14,6 +14,7 @@ namespace JustRIpe
         public static string usernull;
 
 
+
         public static bool VerifyLogin(string username, string password)
         {
             string connectionString = Properties.Settings.Default.DBAccess;
@@ -37,6 +38,10 @@ namespace JustRIpe
             return verify;
         }
 
+        //public static string usereventdisplay()
+        //{
+        //    string connectionString = P
+        //}
 
         public static string displayuser()
         {
@@ -51,18 +56,18 @@ namespace JustRIpe
 
 
 
-        public static string RoleCheck(string username)
-        { string connectionString = Properties.Settings.Default.DBAccess;
-            DatabaseTransmission DBAcc = new DatabaseTransmission(connectionString);
-            DataSet dataSet = new DataSet();
+        //public static string RoleCheck()
+        //{ string connectionString = Properties.Settings.Default.DBAccess;
+        //    DatabaseTransmission DBAcc = new DatabaseTransmission(connectionString);
+        //    DataSet dataSet = new DataSet();
 
 
-            string sqlStatementperm = ("SELECT permissions FROM LoginDB WHERE username = '" + username + "'");
+        //    string sqlStatementperm = ("SELECT permissions FROM LoginDB WHERE username = '" + userperm + "'");
 
-            dataSet = DBAcc.getDataSet(sqlStatementperm);
+        //    dataSet = DBAcc.getDataSet(sqlStatementperm);
             
-            return dataSet.Tables[0].Rows[0].ItemArray[0].ToString();
-        }
+        //    return dataSet.Tables[0].Rows[0].ItemArray[0].ToString();
+        //}
     }
 
 

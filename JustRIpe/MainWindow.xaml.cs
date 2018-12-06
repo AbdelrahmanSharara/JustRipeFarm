@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
+
 namespace JustRIpe
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace JustRIpe
         {
             if (LoginAuth.VerifyLogin(Username_txt.Text, Password_txt.Password))
             {
-                
+
                 MainEvent window = new MainEvent();
                 window.Show();
                 this.Close();
