@@ -68,6 +68,7 @@ namespace JustRIpe
             DragMove();
         }
 
+        //Sign-in Button
         private async void SignInButton_Click(object sender, RoutedEventArgs e)
         {
 
