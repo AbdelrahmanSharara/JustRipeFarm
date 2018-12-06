@@ -73,6 +73,7 @@ namespace JustRIpe
         {
 
             progbar.Opacity = 1;
+
             await Task.Delay(650);
             LoginInit();
            
