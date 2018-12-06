@@ -23,7 +23,7 @@ namespace JustRIpe
         public MainEvent()
         {
             InitializeComponent();
-         
+            UserView.Text =  LoginAuth.displayuser();
         }
 
 

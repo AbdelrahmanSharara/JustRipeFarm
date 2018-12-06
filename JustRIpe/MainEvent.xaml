@@ -27,7 +27,7 @@
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
-    
+
     <Window.Triggers>
         <!--Open Trigger-->
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="OpenMenu">
@@ -39,32 +39,40 @@
             <BeginStoryboard Storyboard="{StaticResource MenuOff}"/>
         </EventTrigger>
     </Window.Triggers>
-    
+
 
 
 
     <Grid MouseDown="Grid_MouseDown">
         <!--The User Control Displays-->
         <Grid x:Name="EventCenter" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="550" Width="959" />
-       
-        <Grid Height="50" VerticalAlignment="Top" Background="#FF2BAA45">
+
+        <Grid Height="50" VerticalAlignment="Top" Background="#FF2BAA45" >
+
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
             </Grid.Effect>
-
-
             <StackPanel>
+
+            </StackPanel>
+            <TextBlock x:Name="UserView" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Padding="0" FontFamily="OpenDyslexic" Margin="360,0,278,0" Width="386" ></TextBlock>
+            <StackPanel>
+
                 <!--Top right grid-->
                 <materialDesign:PopupBox  HorizontalAlignment="Right" Margin="11"
                                           PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
                     <StackPanel Width="150">
+
+
                         <!--Signout Button-->
                         <Button x:Name="Signoutbt" Content="Sign out" Click="Signoutbt_Click"/>
                         <!--Exit Button-->
                         <Button x:Name="Exitbt" Content="Exit" Click="Exitbt_Click"/>
+
                     </StackPanel>
                 </materialDesign:PopupBox>
             </StackPanel>
+
         </Grid>
 
         <Grid x:Name="Menu" Width="65"  HorizontalAlignment="Left" Background="#FF16AE35">
@@ -83,7 +91,7 @@
                     <Button x:Name="OpenMenu" Grid.Row="0" Width="65" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="OpenMenu_Click">
                         <materialDesign:PackIcon Foreground="#FF16AE35" Kind="Menu" Width="37" Height="30" Margin="-5" />
                     </Button>
-                    
+
                     <!--the Offical Logo-->
                     <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8 14" Grid.Row="1" Source="logo.jpg" Stretch="Uniform"/>
 
