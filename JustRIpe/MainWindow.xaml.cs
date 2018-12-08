@@ -85,11 +85,11 @@ namespace JustRIpe
         private void Password_txt_KeyDown(object sender, KeyEventArgs e)
         {
 
-            if (e.Key != System.Windows.Input.Key.Enter)
+            if (e.Key != Key.Enter)
                 return;
 
             SignInButton_Click(sender, e);
-
+            
 
 
 
@@ -101,21 +101,23 @@ namespace JustRIpe
 
         private void Username_txt_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key != System.Windows.Input.Key.Enter)
-                
+            if (e.Key != Key.Enter)
 
+                return;
             SignInButton_Click(sender, e);
 
         }
 
         private void Username_txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            Regex regex = new Regex("[']");
+            e.Handled = regex.IsMatch(e.Text);
         }
 
         private void Password_txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-           
+            Regex regex = new Regex("[']");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }
