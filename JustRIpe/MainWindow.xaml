@@ -38,13 +38,13 @@
                 
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Account" Foreground="{Binding ElementName=Username_txt, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0,4"/>
-                    <TextBox x:Name="Username_txt" Width="310" materialDesign:HintAssist.Hint="Username" materialDesign:HintAssist.IsFloating="True"/>
+                    <TextBox x:Name="Username_txt" Width="310" materialDesign:HintAssist.Hint="Username" materialDesign:HintAssist.IsFloating="True" KeyDown="Username_txt_KeyDown" PreviewTextInput="Username_txt_PreviewTextInput"  />
                 </StackPanel>
                 
                 <!--The Password Bar-->
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Key" Foreground="{Binding ElementName=Password_txt, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0,4"/>
-                    <PasswordBox x:Name="Password_txt" Width="310" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True" KeyDown="Password_txt_KeyDown" />
+                    <PasswordBox x:Name="Password_txt" Width="310" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True" KeyDown="Password_txt_KeyDown" PreviewTextInput="Password_txt_PreviewTextInput" />
                 </StackPanel>
                 
                 <!--Sign in Button-->

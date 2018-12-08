@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Text.RegularExpressions;
+
 
 
 namespace JustRIpe
@@ -24,7 +26,7 @@ namespace JustRIpe
     {
         public MainWindow()
         {
-            
+
             InitializeComponent();
             progbar.IsIndeterminate = true;
             progbar.Opacity = 0;
@@ -39,9 +41,9 @@ namespace JustRIpe
                 MainEvent window = new MainEvent();
                 window.Show();
                 this.Close();
-                    
 
-                
+
+
 
             }
             else
@@ -54,7 +56,7 @@ namespace JustRIpe
         //The close button
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-           Application.Current.Shutdown();
+            Application.Current.Shutdown();
         }
         //The minimise button 
         private void MinimiseButton_Click(object sender, RoutedEventArgs e)
@@ -76,17 +78,44 @@ namespace JustRIpe
 
             await Task.Delay(650);
             LoginInit();
-           
+
         }
-        
+
         //Enter button can initialise the login procedure
         private void Password_txt_KeyDown(object sender, KeyEventArgs e)
         {
+
             if (e.Key != System.Windows.Input.Key.Enter)
                 return;
-                SignInButton_Click(sender, e);
+
+            SignInButton_Click(sender, e);
+
+
+
+
+
+
         }
 
-        
+
+
+        private void Username_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key != System.Windows.Input.Key.Enter)
+                return;
+
+            SignInButton_Click(sender, e);
+
+        }
+
+        private void Username_txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void Password_txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+           
+        }
     }
 }
