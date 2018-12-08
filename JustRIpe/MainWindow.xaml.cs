@@ -102,7 +102,7 @@ namespace JustRIpe
         private void Username_txt_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key != System.Windows.Input.Key.Enter)
-                return;
+                
 
             SignInButton_Click(sender, e);
 
