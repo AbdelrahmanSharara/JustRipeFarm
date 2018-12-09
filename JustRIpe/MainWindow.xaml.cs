@@ -110,13 +110,13 @@ namespace JustRIpe
 
         private void Username_txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[']");
+            Regex regex = new Regex("['=]");
             e.Handled = regex.IsMatch(e.Text);
         }
 
         private void Password_txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[']");
+            Regex regex = new Regex("['=]");
             e.Handled = regex.IsMatch(e.Text);
         }
     }
