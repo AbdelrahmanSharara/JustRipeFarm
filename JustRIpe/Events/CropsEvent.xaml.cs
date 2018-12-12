@@ -18,9 +18,6 @@ using System.Data;
 
 namespace JustRIpe
 {
-    /// <summary>
-    /// Interaction logic for CropsEvent.xaml
-    /// </summary>
     public partial class CropsEvent : UserControl
     {
         string connectionString = Properties.Settings.Default.DBAccess;
@@ -32,7 +29,7 @@ namespace JustRIpe
             fertilisersPlanDataGrid.Visibility = Visibility.Hidden;
         }
 
-        // Fills the data grid for displaying Crops currently in cultivation
+        // Display crops currently in cultivation
         private void FillDataGridCrops()
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
@@ -40,44 +37,40 @@ namespace JustRIpe
                 sqlCon.Open();
                 SqlDataAdapter sqlData = new SqlDataAdapter("SELECT cropName FROM Crops WHERE currentStatus = 1", sqlCon);
                 DataTable CropsDataSet = new DataTable();
-                sqlData.Fill(CropsDataSet);
+                sqlData.Fill(CropsDataSet); //CROPS DATA SET
                 cropsDataGrid.ItemsSource = CropsDataSet.DefaultView;
             }
-
-
         }
-        // Fills the data grid for displaying
+
+        //Method for filling the fertilisers data grid
+        private void FillDataGridFertilisersGeneral(string sqlStatement)
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlData = new SqlDataAdapter(sqlStatement, sqlCon);
+                DataTable FertilisersDataSet = new DataTable();
+                sqlData.Fill(FertilisersDataSet); //FERTILISERS DATA SET
+                fertilisersPlanDataGrid.ItemsSource = FertilisersDataSet.DefaultView;
+            }
+        }
+
+        // Display fertilisers plan
         private void FillDataGridFertilisersPlan()
         {
-            using (SqlConnection sqlCon = new SqlConnection(connectionString))
-            {
-                sqlCon.Open();
-                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT cropDestined, fertiliserName, ammountNeeded FROM Fertilisers", sqlCon);
-                DataTable FertilisersDataSet = new DataTable();
-                sqlData.Fill(FertilisersDataSet);
-                fertilisersPlanDataGrid.ItemsSource = FertilisersDataSet.DefaultView;
-            }
-
-
+            string sqlStatement = "SELECT cropDestined, fertiliserName, ammountNeeded FROM Fertilisers";
+            FillDataGridFertilisersGeneral(sqlStatement);
         }
-        // Fills the data grid for displaying
+
+        // Display fertilisers stock
         private void FillDataGridFertilisersStock()
         {
-            using (SqlConnection sqlCon = new SqlConnection(connectionString))
-            {
-                sqlCon.Open();
-                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT fertiliserName, stockNeeded FROM Fertilisers", sqlCon);
-                DataTable FertilisersDataSet = new DataTable();
-                sqlData.Fill(FertilisersDataSet);
-                fertilisersPlanDataGrid.ItemsSource = FertilisersDataSet.DefaultView;
-            }
-
-
+            string sqlStatement = "SELECT fertiliserName, stockNeeded FROM Fertilisers";
+            FillDataGridFertilisersGeneral(sqlStatement);
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-
             // Do not load your data at design time.
             // if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
             // {
