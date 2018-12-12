@@ -67,7 +67,13 @@ namespace JustRIpe
         //Draggable Window from the grid bar
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            try
+            {
+                DragMove();
+            }
+            catch {
+               
+            }
         }
 
         //Sign-in Button
