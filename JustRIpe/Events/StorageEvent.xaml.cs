@@ -37,7 +37,7 @@ namespace JustRIpe
             {
                 
                 sqlCon.Open(); //establishing sql connection
-                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Storage", sqlCon); //sql statement for storage main
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Storage", sqlCon); //sql statement to select ALL from storage table
                 DataTable StorageDSet = new DataTable(); //defining storage datatable
 
                 sqlData.Fill(StorageDSet); //filling storage datatable
@@ -48,7 +48,7 @@ namespace JustRIpe
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open(); //establishing sql connection
-                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Crops", sqlCon); //sql statement for storage main
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Crops", sqlCon); //sql statement to select ALL from crops table
                 DataTable CropStock = new DataTable(); //defining crop stock datatable
 
                 sqlData.Fill(CropStock); //filling crop stock datatable
@@ -59,14 +59,24 @@ namespace JustRIpe
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open(); //establishing sql connection
-                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Vehicles", sqlCon); //sql statement for storage main
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Vehicles", sqlCon); //sql statement to select ALL from vehicles table
                 DataTable VehStock = new DataTable(); //defining veh stock datatable
 
                 sqlData.Fill(VehStock); //filling vehicle stock datatable
 
                 vehiclesDataGrid.ItemsSource = VehStock.DefaultView; //filling vehicle availability datagrid
-            } 
+            }
 
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open(); //establishing sql connection
+                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM Fertilisers", sqlCon); //sql statement to select ALL from fertilisers table
+                DataTable FerStock = new DataTable(); //defining veh stock datatable
+
+                sqlData.Fill(FerStock); //filling vehicle stock datatable
+
+                fertilisersDataGrid.ItemsSource = FerStock.DefaultView; //filling vehicle availability datagrid
+            }
 
         }
 

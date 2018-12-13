@@ -101,6 +101,11 @@
     <Compile Include="Events\StorageEvent.xaml.cs">
       <DependentUpon>StorageEvent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FertiliserDSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FertiliserDSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FertilisersDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -215,6 +220,17 @@
     </None>
     <None Include="CropStock.xss">
       <DependentUpon>CropStock.xsd</DependentUpon>
+    </None>
+    <None Include="FertiliserDSet.xsc">
+      <DependentUpon>FertiliserDSet.xsd</DependentUpon>
+    </None>
+    <None Include="FertiliserDSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FertiliserDSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FertiliserDSet.xss">
+      <DependentUpon>FertiliserDSet.xsd</DependentUpon>
     </None>
     <None Include="FertilisersDataSet.xsc">
       <DependentUpon>FertilisersDataSet.xsd</DependentUpon>
