@@ -19,9 +19,14 @@
   Project break (MAJOR): Upon uploading files that do not match config of other files, this breaks the entire project. This was learned 
   when a member of the team tried uploading the database. To fix this error in the future, files must be uploaded to different branches 
   in the project. Files seperated by branches will not break the project, but also allow us to evaluate and analyse files before going 
-  on to the master branch. ¦ Repo has been resorted [08/11/2018]
+  on to the master branch. ¦ Repo has been resorted. [08/11/2018]
 
   [10/11/2018] ID: 002
   Login failure (MAJOR): When trying to use any details (correct and incorrect) you are unable to sign in. The program is unable to reach
   the database that has details logged. To fix error, the code needs to be altered to properly link the database and code together so they
   can talk to eachother. ¦ gitignore was ignoring the .mdf file. Problem fixed. [14/11/2018]
+  
+  [08/12/2018] ID: 003
+  Data grids (MAJOR): When trying to add/modify/delete information from the data grids, this does not update the current data. 
+  This is because SQL statements are missing from the code on each data grid uses in the system. This needs to be changed immediately
+  otherwise the staff at JustRipe will not be able to change the storage data. ¦ Issue still ongoing.
