@@ -91,8 +91,7 @@ namespace JustRIpe
             DatabaseTransmission DBAcc = new DatabaseTransmission(connectionString);
             string sqlStatement = ("SELECT permissions FROM LoginDB WHERE username='" + usernull2 + "'");
             dataSet = DBAcc.getDataSet(sqlStatement);
-            string role = dataSet.Tables[0].Rows[0][0].ToString();
-            return role;
+            return dataSet.Tables[0].Rows[0][0].ToString(); ;
         }
 
         public static string permcheck()
