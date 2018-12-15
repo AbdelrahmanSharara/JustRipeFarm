@@ -28,16 +28,21 @@ namespace JustRIpe
         {
 
             InitializeComponent();
+            ///this indicates that the loading bar is on but hidden
+            /// written by : Abdelrahman Ahmed 
             progbar.IsIndeterminate = true;
             progbar.Opacity = 0;
         }
 
-        //verify the login using the database 
+        /// <summary>
+        /// this statement is used to Verify the username and password match with the database
+        /// otherwise return the message of incorrect details.
+        /// written by : Abdelrahman Ahmed 
+        /// </summary>
         private void LoginInit()
         {
             if (LoginAuth.VerifyLogin(Username_txt.Text, Password_txt.Password))
             {
-
                 MainEvent window = new MainEvent();
                 window.Show();
                 this.Close();
@@ -53,18 +58,33 @@ namespace JustRIpe
             }
         }
 
-        //The close button
+        /// <summary>
+        /// this functionality is used for the designed close button in MainWindow.Xaml
+        /// written by : Abdelrahman Ahmed 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
-        //The minimise button 
+        /// <summary>
+        /// this functionality is used for the designed Minimise button in MainWindow.Xaml
+        /// written by : Abdelrahman Ahmed 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MinimiseButton_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
 
-        //Draggable Window from the grid bar
+        /// <summary>
+        /// The DragMove functionality is used to drag the window
+        /// written by : Abdelrahman Ahmed 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             try
@@ -76,35 +96,48 @@ namespace JustRIpe
             }
         }
 
-        //Sign-in Button
+        /// <summary>
+        /// the Sign-in button Click is used with async await to use the login bar animation
+        /// and initialise the login
+        /// written by : Abdelrahman Ahmed 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void SignInButton_Click(object sender, RoutedEventArgs e)
         {
 
             progbar.Opacity = 1;
 
-            await Task.Delay(650);
+            await Task.Delay(400);
             LoginInit();
 
         }
 
-        //Enter button can initialise the login procedure
+        /// <summary>
+        /// the keydown is used in the password box for the user's convenience 
+        /// to click enter rather than using the mouse for the login
+        /// written by : Abdelrahman Ahmed 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Password_txt_KeyDown(object sender, KeyEventArgs e)
         {
 
             if (e.Key != Key.Enter)
                 return;
 
-            SignInButton_Click(sender, e);
-            
-
-
-
-
+            SignInButton_Click(sender, e);            
 
         }
 
 
-
+        /// <summary>
+        /// the keydown is used in the password box for the user's convenience 
+        /// to click enter rather than using the mouse for the login
+        /// written by : Abdelrahman Ahmed 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Username_txt_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key != Key.Enter)
@@ -114,6 +147,13 @@ namespace JustRIpe
 
         }
 
+        /// <summary>
+        /// the username text preview is used to check and block certain character
+        /// using REGEX Regular Expressions
+        /// written by : Abdelrahman Ahmed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Username_txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("['=]");

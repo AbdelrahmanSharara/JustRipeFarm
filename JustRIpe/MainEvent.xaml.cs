@@ -20,10 +20,29 @@ namespace JustRIpe
     /// </summary>
     public partial class MainEvent : Window
     {
+        /// <summary>
+        /// after initialise component the uername appears on the top of the window
+        /// and then the switch case is used to display certain properities 
+        /// depending if the user is an admin or not
+        /// written by : Abdelrahman Ahmed 
+        /// </summary>
         public MainEvent()
         {
+            
             InitializeComponent();
             UserView.Text =  LoginAuth.displayuser();
+            switch (LoginAuth.permcheck())
+            {
+                case "admin":
+                    Users.IsEnabled = true;
+                    break;
+                case "user":
+                    Users.IsEnabled = false;
+                    break;
+                default:
+                    break;
+
+            }
         }
 
 
