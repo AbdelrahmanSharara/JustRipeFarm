@@ -46,17 +46,17 @@
         </DataGrid>
         <Label Content="Crop Availability" HorizontalAlignment="Left" Margin="97,301,0,0" VerticalAlignment="Top" Height="74" FontSize="14" Width="170"/>
         <Label Content="Vehicle Availability" HorizontalAlignment="Left" Margin="395,301,0,0" VerticalAlignment="Top" Height="74" FontSize="14" Width="170"/>
-        <DataGrid x:Name="vehiclesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource vehiclesViewSource}}" Margin="329,346,324,39" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid x:Name="vehiclesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource vehiclesViewSource}}" Margin="329,339,324,45.6" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="vehicleIDColumn" Binding="{Binding vehicleID}" Header="ID" IsReadOnly="True" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="vehicleNameColumn" Binding="{Binding vehicleName}" Header="Name" Width="SizeToCells"/>
                 <DataGridTextColumn x:Name="vehicleAvailabilityColumn" Binding="{Binding vehicleAvailability}" Header="Status" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="fertilisersDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource fertilisersViewSource}}" Margin="656,346,10,19" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid x:Name="fertilisersDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource fertilisersViewSource}}" Margin="644,339,10,25.6" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="fertiliserNameColumn" Binding="{Binding fertiliserName}" Header="Name" Width="SizeToCells"/>
-                <DataGridTextColumn x:Name="stockAvailableColumn" Binding="{Binding stockAvailable}" Header="Availability" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="stockAvailableColumn" Binding="{Binding stockNeeded}" Header="Availability" Width="SizeToCells"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Fertiliser Availability" HorizontalAlignment="Left" Margin="725,301,-95,0" VerticalAlignment="Top" Height="74" FontSize="14" Width="170"/>
