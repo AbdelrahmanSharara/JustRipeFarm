@@ -81,27 +81,31 @@ namespace JustRIpe
             // }
         }
 
+        //Displaying buttons accordingly to user's role
         private void ButtonsVisibility()
         {
-
+            //Getting the logged in user's role (admin or user)
             string currentRole = LoginAuth.displayRole();
 
+            //admin = Manager Role
             if (currentRole == "admin")
-                //admin = Manager Role
             {
+                //Display all buttons
                 Button_Crops_Cultivation.Visibility = Visibility.Visible;
                 Button_Fertiliser_Plan.Visibility = Visibility.Visible;
                 Button_Fertiliser_Stock.Visibility = Visibility.Visible;
             }
+            //user = Labourer Role
             if (currentRole == "user")
-                //user = Labourer Role
             {
+                //Display only one button, "Fertiliser Plan"
                 Button_Crops_Cultivation.Visibility = Visibility.Hidden;
                 Button_Fertiliser_Plan.Visibility = Visibility.Visible;
                 Button_Fertiliser_Stock.Visibility = Visibility.Hidden;
             }
         }
-            private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         // Button for Crops current in cultivation
         {
             fertilisersPlanDataGrid.Visibility = Visibility.Hidden;
