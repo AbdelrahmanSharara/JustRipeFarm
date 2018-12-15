@@ -12,6 +12,7 @@ namespace JustRIpe
         public static bool Verified { get => verify; }
         private static bool verify = false;
         public static string usernull;
+        public static string permnull;
 
 
 
@@ -22,7 +23,7 @@ namespace JustRIpe
             DataSet dataSet = new DataSet();
 
             usernull = username;
-
+            permnull = username;
             string sqlStatement = ("SELECT * FROM LoginDB WHERE username = '" + username + "' AND password= '" + password + "'");
 
 
@@ -56,18 +57,19 @@ namespace JustRIpe
 
 
 
-        //public static string RoleCheck()
-        //{ string connectionString = Properties.Settings.Default.DBAccess;
-        //    DatabaseTransmission DBAcc = new DatabaseTransmission(connectionString);
-        //    DataSet dataSet = new DataSet();
+        public static string permcheck()
+        {
+            string connectionString = Properties.Settings.Default.DBAccess;
+            DatabaseTransmission DBAcc = new DatabaseTransmission(connectionString);
+            DataSet dataSet = new DataSet();
 
 
-        //    string sqlStatementperm = ("SELECT permissions FROM LoginDB WHERE username = '" + userperm + "'");
+            string sqlStatementperm = ("SELECT permissions FROM LoginDB WHERE username = '" + permnull + "'");
 
-        //    dataSet = DBAcc.getDataSet(sqlStatementperm);
-            
-        //    return dataSet.Tables[0].Rows[0].ItemArray[0].ToString();
-        //}
+            dataSet = DBAcc.getDataSet(sqlStatementperm);
+
+            return dataSet.Tables[0].Rows[0].ItemArray[0].ToString();
+        }
     }
 
 

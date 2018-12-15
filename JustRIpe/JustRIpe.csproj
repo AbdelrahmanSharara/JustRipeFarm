@@ -92,6 +92,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CropStock.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DB\DatabaseStatements.cs" />
     <Compile Include="Events\CropsEvent.xaml.cs">
       <DependentUpon>CropsEvent.xaml</DependentUpon>
     </Compile>

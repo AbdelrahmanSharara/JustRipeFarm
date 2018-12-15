@@ -16,7 +16,12 @@ namespace JustRIpe
 
 
         public DatabaseTransmission(string connectionStr)
-        { this.ConnectionStr = connectionStr; }
+        { ConnectionStr = connectionStr; }
+
+        public static string connectionstr
+        {
+            set { connectionstr = value; }
+        }
 
         public void openConnection()
         {
