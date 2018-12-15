@@ -29,7 +29,7 @@ namespace JustRIpe
 
             InitializeComponent();
             ///this indicates that the loading bar is on but hidden
-            /// written by : Abdelrahman Ahmed 
+            /// written by author : Abdelrahman Ahmed
             progbar.IsIndeterminate = true;
             progbar.Opacity = 0;
         }
@@ -37,7 +37,7 @@ namespace JustRIpe
         /// <summary>
         /// this statement is used to Verify the username and password match with the database
         /// otherwise return the message of incorrect details.
-        /// written by : Abdelrahman Ahmed 
+        /// written by author : Abdelrahman Ahmed 
         /// </summary>
         private void LoginInit()
         {
@@ -60,7 +60,7 @@ namespace JustRIpe
 
         /// <summary>
         /// this functionality is used for the designed close button in MainWindow.Xaml
-        /// written by : Abdelrahman Ahmed 
+        /// written by author : Abdelrahman Ahmed 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -70,7 +70,7 @@ namespace JustRIpe
         }
         /// <summary>
         /// this functionality is used for the designed Minimise button in MainWindow.Xaml
-        /// written by : Abdelrahman Ahmed 
+        /// written by author : Abdelrahman Ahmed
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -81,7 +81,7 @@ namespace JustRIpe
 
         /// <summary>
         /// The DragMove functionality is used to drag the window
-        /// written by : Abdelrahman Ahmed 
+        /// written by author : Abdelrahman Ahmed
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -99,7 +99,7 @@ namespace JustRIpe
         /// <summary>
         /// the Sign-in button Click is used with async await to use the login bar animation
         /// and initialise the login
-        /// written by : Abdelrahman Ahmed 
+        /// written by author : Abdelrahman Ahmed 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -108,7 +108,7 @@ namespace JustRIpe
 
             progbar.Opacity = 1;
 
-            await Task.Delay(400);
+            await Task.Delay(200);
             LoginInit();
 
         }
@@ -116,7 +116,7 @@ namespace JustRIpe
         /// <summary>
         /// the keydown is used in the password box for the user's convenience 
         /// to click enter rather than using the mouse for the login
-        /// written by : Abdelrahman Ahmed 
+        /// written by author : Abdelrahman Ahmed 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -134,7 +134,7 @@ namespace JustRIpe
         /// <summary>
         /// the keydown is used in the password box for the user's convenience 
         /// to click enter rather than using the mouse for the login
-        /// written by : Abdelrahman Ahmed 
+        /// written by author : Abdelrahman Ahmed 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -150,20 +150,29 @@ namespace JustRIpe
         /// <summary>
         /// the username text preview is used to check and block certain character
         /// using REGEX Regular Expressions
-        /// written by : Abdelrahman Ahmed
+        /// written by author : Abdelrahman Ahmed
+        /// ref: https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.7.2
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Username_txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("['=]");
-            e.Handled = regex.IsMatch(e.Text);
+            Regex regular = new Regex("['=]");
+            e.Handled = regular.IsMatch(e.Text);
         }
 
+        /// <summary>
+        /// the password text preview is used to check and block certain character
+        /// using REGEX Regular Expressions
+        /// written by author : Abdelrahman Ahmed
+        /// ref: https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.7.2
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Password_txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("['=]");
-            e.Handled = regex.IsMatch(e.Text);
+            Regex regular = new Regex("['=]");
+            e.Handled = regular.IsMatch(e.Text);
         }
     }
 }

@@ -10,6 +10,11 @@ namespace JustRIpe
 {
     class DatabaseTransmission
     {
+        /// <summary>
+        /// The DataTransmission class is used to connect the database
+        /// to the program using  the connection string in the app settings
+        /// written by : written by author : Abdelrahman Ahmed
+        /// </summary>
         private string ConnectionStr;
         SqlConnection connectionToDB;
         private SqlDataAdapter  dataAdapter;

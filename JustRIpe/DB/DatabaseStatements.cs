@@ -5,18 +5,18 @@ namespace JustRIpe.DB
 {
     class DatabaseStatements
     {
-        public static string usergrid;
+       
 
 
 
 
-        public static DataSet displayusergrid()
+        public static DataSet displayEmployees(string sqlStatement)
         {
             string connectionString = Properties.Settings.Default.DBAccess;
             DataSet dataSet = new DataSet();
             DatabaseTransmission DBAcc = new DatabaseTransmission(connectionString);
-            string usersql = ("SELECT name, email, phone FROM Users WHERE role='" + usergrid + "'");
-            dataSet = DBAcc.getDataSet(usersql);
+            
+            dataSet = DBAcc.getDataSet(sqlStatement);
 
             return dataSet;
         }

@@ -7,6 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" >
     <Grid>
-        <DataGrid x:Name="UserlistGrid" Margin="10,0,0,10" IsReadOnly="True"  />
+        <DataGrid x:Name="UserlistGrid" Margin="0,0,10,10" IsReadOnly="True"  />
     </Grid>
 </UserControl>

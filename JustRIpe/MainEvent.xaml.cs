@@ -24,7 +24,7 @@ namespace JustRIpe
         /// after initialise component the uername appears on the top of the window
         /// and then the switch case is used to display certain properities 
         /// depending if the user is an admin or not
-        /// written by : Abdelrahman Ahmed 
+        /// written by author : Abdelrahman Ahmed 
         /// </summary>
         public MainEvent()
         {
@@ -45,7 +45,7 @@ namespace JustRIpe
             }
         }
 
-
+       
             private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
@@ -68,6 +68,16 @@ namespace JustRIpe
             CloseMenu.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// The Following method is used to display all the usercontrol tabs
+        /// in a list form using switch case that changes when the user click on a different
+        /// usercontrol button.
+        /// written by author : Abdelrahman Ahmed 
+        /// ref: https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.selectionchangedeventargs?view=netframework-4.7.2
+        /// using selection event changer with children to ass new tab and clear the previous one.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

@@ -21,6 +21,11 @@ namespace JustRIpe
     /// </summary>
     public partial class UserEvent : UserControl
     {
+        /// <summary>
+        /// after initialise component the statement below it 
+        /// displays the data grid for the Users from the database
+        /// written by author : Abdelrahman Ahmed
+        /// </summary>
         public UserEvent()
         {
             InitializeComponent();
