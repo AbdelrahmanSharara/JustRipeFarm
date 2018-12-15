@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using JustRIpe.DB;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -23,6 +24,8 @@ namespace JustRIpe
         public UserEvent()
         {
             InitializeComponent();
+            UserlistGrid.ItemsSource = DatabaseStatements.GetUsers("SELECT username, phone, email, role FROM Users").Tables[0].DefaultView;
+
         }
     }
 }
