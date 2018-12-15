@@ -25,6 +25,7 @@ namespace JustRIpe
         public CropsEvent()
         {
             InitializeComponent();
+            ButtonsVisibility();
             cropsDataGrid.Visibility = Visibility.Hidden;
             fertilisersPlanDataGrid.Visibility = Visibility.Hidden;
         }
@@ -80,7 +81,27 @@ namespace JustRIpe
             // }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonsVisibility()
+        {
+
+            string currentRole = LoginAuth.displayRole();
+
+            if (currentRole == "admin")
+                //admin = Manager Role
+            {
+                Button_Crops_Cultivation.Visibility = Visibility.Visible;
+                Button_Fertiliser_Plan.Visibility = Visibility.Visible;
+                Button_Fertiliser_Stock.Visibility = Visibility.Visible;
+            }
+            if (currentRole == "user")
+                //user = Labourer Role
+            {
+                Button_Crops_Cultivation.Visibility = Visibility.Hidden;
+                Button_Fertiliser_Plan.Visibility = Visibility.Visible;
+                Button_Fertiliser_Stock.Visibility = Visibility.Hidden;
+            }
+        }
+            private void Button_Click(object sender, RoutedEventArgs e)
         // Button for Crops current in cultivation
         {
             fertilisersPlanDataGrid.Visibility = Visibility.Hidden;

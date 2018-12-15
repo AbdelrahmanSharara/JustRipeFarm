@@ -22,9 +22,9 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Crops" HorizontalAlignment="Left" Margin="340,10,0,0" VerticalAlignment="Top" Height="57" Width="150" FontSize="36" FontFamily="Rockwell Extra Bold" Background="White"/>
-        <Button Content="Crops in Cultivation" HorizontalAlignment="Left" Margin="45,75,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click"/>
-        <Button Content="Fertiliser Plan" HorizontalAlignment="Left" Margin="215,75,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click_1"/>
-        <Button Content="Fertiliser Stock" HorizontalAlignment="Left" Margin="385,75,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click_2"/>
+        <Button x:Name="Button_Crops_Cultivation" Content="Crops in Cultivation" HorizontalAlignment="Left" Margin="45,75,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click"/>
+        <Button x:Name="Button_Fertiliser_Plan" Content="Fertiliser Plan" HorizontalAlignment="Left" Margin="215,75,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click_1"/>
+        <Button x:Name="Button_Fertiliser_Stock" Content="Fertiliser Stock" HorizontalAlignment="Left" Margin="385,75,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click_2"/>
         <DataGrid x:Name="fertilisersPlanDataGrid" HorizontalAlignment="Left" Height="170" Margin="45,140,0,0" VerticalAlignment="Top" Width="542" ItemsSource="{Binding Source={StaticResource fertilisersViewSource}}"/>
 
     </Grid>

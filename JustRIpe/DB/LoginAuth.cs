@@ -11,6 +11,7 @@ namespace JustRIpe
     {
         public static bool Verified { get => verify; }
         private static bool verify = false;
+        public static string usernull2;
         public static string usernull;
         public static string permnull;
 
@@ -30,6 +31,7 @@ namespace JustRIpe
             DataSet dataSet = new DataSet();
 
             usernull = username;
+            usernull2 = username;
             permnull = username;
 
             char[] checkuser = username.ToCharArray();
@@ -79,7 +81,19 @@ namespace JustRIpe
         }
 
 
-
+        // Template got from Abdelrahman
+        // Changed the SQL Statement and the return
+        // Used to put in function permission for Crops Event
+        public static string displayRole()
+        {
+            string connectionString = Properties.Settings.Default.DBAccess;
+            DataSet dataSet = new DataSet();
+            DatabaseTransmission DBAcc = new DatabaseTransmission(connectionString);
+            string sqlStatement = ("SELECT permissions FROM LoginDB WHERE username='" + usernull2 + "'");
+            dataSet = DBAcc.getDataSet(sqlStatement);
+            string role = dataSet.Tables[0].Rows[0][0].ToString();
+            return role;
+        }
 
         public static string permcheck()
         {
