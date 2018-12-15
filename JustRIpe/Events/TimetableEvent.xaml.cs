@@ -27,6 +27,7 @@ namespace JustRIpe
         {
             InitializeComponent();
             FillEventDataGrid(); //intilises all code in the FillEventDataGrid()
+            TimetableVisibility(); //manages permissions 
         }
 
         string connectionString = Properties.Settings.Default.DBAccess;
@@ -46,6 +47,24 @@ namespace JustRIpe
                 eventsDataGrid.ItemsSource = TimetableDSet.DefaultView; //filling timetable datagrid
             }
 
+        }
+
+        private void TimetableVisibility()
+        {
+            string currentRole = LoginAuth.displayRole();
+
+            if (currentRole == "admin")
+            //admin = Manager Role
+            {
+                eventsDataGrid.Visibility = Visibility.Visible;
+                accessDeniedlbl.Visibility = Visibility.Hidden;
+            }
+            if (currentRole == "user")
+            //user = Labourer Role
+            {
+                eventsDataGrid.Visibility = Visibility.Hidden;
+                accessDeniedlbl.Visibility = Visibility.Visible;
+            }
         }
 
 

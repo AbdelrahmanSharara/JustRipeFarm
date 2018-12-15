@@ -35,5 +35,6 @@
                 <DataGridTextColumn x:Name="eventTimeColumn" Binding="{Binding eventTime}" Header="Time" Width="SizeToCells"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Label x:Name="accessDeniedlbl" Content="Access Denied" HorizontalAlignment="Left" Margin="302,211,0,0" VerticalAlignment="Top" FontSize="48"/>
     </Grid>
 </UserControl>
