@@ -15,6 +15,13 @@ namespace JustRIpe
         public static string permnull;
 
 
+        /// <summary>
+        /// This method checks the username & password if they match the database
+        /// the CharArray is used to check the database for apostrophe or Sql injection
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
 
         public static bool VerifyLogin(string username, string password)
         {
@@ -24,6 +31,26 @@ namespace JustRIpe
 
             usernull = username;
             permnull = username;
+
+            char[] checkuser = username.ToCharArray();
+            char[] checkpass = password.ToCharArray();
+
+            for (int i = 0; i < checkuser.Length; i++)
+            {
+                if (checkuser[i] == '\'')
+                {
+                    return false;
+                }
+            }
+
+            for (int i = 0; i < checkpass.Length; i++)
+            {
+                if (checkpass[i] == '\'')
+                {
+                    return false;
+                }
+            }
+
             string sqlStatement = ("SELECT * FROM LoginDB WHERE username = '" + username + "' AND password= '" + password + "'");
 
 
@@ -39,10 +66,7 @@ namespace JustRIpe
             return verify;
         }
 
-        //public static string usereventdisplay()
-        //{
-        //    string connectionString = P
-        //}
+        
 
         public static string displayuser()
         {
