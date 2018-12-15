@@ -37,7 +37,7 @@ namespace JustRIpe
         /// <summary>
         /// this statement is used to Verify the username and password match with the database
         /// otherwise return the message of incorrect details.
-        /// written by author : Abdelrahman Ahmed 
+        /// written by author : Abdelrahman Ahmed  
         /// </summary>
         private void LoginInit()
         {

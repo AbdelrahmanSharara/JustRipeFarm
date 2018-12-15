@@ -74,7 +74,7 @@ namespace JustRIpe
         /// usercontrol button.
         /// written by author : Abdelrahman Ahmed 
         /// ref: https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.selectionchangedeventargs?view=netframework-4.7.2
-        /// using selection event changer with children to ass new tab and clear the previous one.
+        /// using selection event changer with children to ass new tab and clear the previous one. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

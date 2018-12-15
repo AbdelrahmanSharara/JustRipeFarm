@@ -8,7 +8,11 @@ namespace JustRIpe.DB
        
 
 
-
+        /// <summary>
+        /// The following statement is used
+        /// </summary>
+        /// <param name="sqlStatement"></param>
+        /// <returns></returns>
 
         public static DataSet displayEmployees(string sqlStatement)
         {
