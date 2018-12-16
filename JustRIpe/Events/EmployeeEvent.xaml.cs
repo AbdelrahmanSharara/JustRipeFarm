@@ -20,7 +20,11 @@ namespace JustRIpe.Events
     /// Interaction logic for EmployeeEvent.xaml
     /// </summary>
     public partial class EmployeeEvent : UserControl
-    {
+    {   /// <summary>
+        /// In the Employee usercontrol below is the statement that connects
+        /// Name, Email, Phone, Role in to the datagrid in the App from the database
+        /// written by Author : Abdelrahman Ahmed
+        /// </summary>
         public EmployeeEvent()
         {
             InitializeComponent();

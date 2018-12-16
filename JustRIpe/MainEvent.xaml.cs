@@ -49,8 +49,13 @@ namespace JustRIpe
             }
         }
 
-       
-            private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        /// <summary>
+        /// The DragMove functionality is used to drag the window
+        /// written by author : Abdelrahman Ahmed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             try
             {
@@ -82,7 +87,7 @@ namespace JustRIpe
         /// usercontrol button.
         /// written by author : Abdelrahman Ahmed 
         /// ref: https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.selectionchangedeventargs?view=netframework-4.7.2
-        /// using selection event changer with children to ass new tab and clear the previous one. 
+        /// using selection event changer with children to add new tab and clear the previous one. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
