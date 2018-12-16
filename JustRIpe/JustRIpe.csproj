@@ -102,6 +102,9 @@
     <Compile Include="Events\EmployeeEvent.xaml.cs">
       <DependentUpon>EmployeeEvent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Events\ScheduleEvent.xaml.cs">
+      <DependentUpon>ScheduleEvent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Events\StorageEvent.xaml.cs">
       <DependentUpon>StorageEvent.xaml</DependentUpon>
     </Compile>
@@ -149,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Events\EmployeeEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\ScheduleEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

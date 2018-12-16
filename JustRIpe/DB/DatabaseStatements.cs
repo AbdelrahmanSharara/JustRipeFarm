@@ -9,7 +9,8 @@ namespace JustRIpe.DB
 
 
         /// <summary>
-        /// The following statement is used
+        /// The following statement is used to connect the grids 
+        /// of database to the program.
         /// </summary>
         /// <param name="sqlStatement"></param>
         /// <returns></returns>
@@ -25,7 +26,16 @@ namespace JustRIpe.DB
             return dataSet;
         }
 
+        public static DataSet displaySchdeule(string sqlStatement)
+        {
+            string connectionString = Properties.Settings.Default.DBAccess;
+            DataSet dataSet = new DataSet();
 
+            DatabaseTransmission DBAcc = new DatabaseTransmission(connectionString);
+            dataSet = DBAcc.getDataSet(sqlStatement);
+
+            return dataSet;
+        }
 
         public static DataSet GetUsers(string sqlStatement)
         {

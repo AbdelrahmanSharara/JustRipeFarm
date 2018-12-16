@@ -126,6 +126,10 @@ namespace JustRIpe
                     tab = new EmployeeEvent();
                     EventCenter.Children.Add(tab);
                     break;
+                case "Schedule":
+                    tab = new ScheduleEvent();
+                    EventCenter.Children.Add(tab);
+                    break;
                 case "Users":
                    tab = new UserEvent();
                    EventCenter.Children.Add(tab);
