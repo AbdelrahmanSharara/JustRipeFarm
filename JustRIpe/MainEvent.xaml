@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:JustRIpe"
         mc:Ignorable="d"
-        Title="JustRipe" Height="650" Width="1024" ResizeMode="NoResize"  WindowStyle="None" Foreground="White" WindowStartupLocation="CenterScreen">
+        Title="JustRipe" Height="720" Width="1024" ResizeMode="NoResize"  WindowStyle="None" Foreground="White" WindowStartupLocation="CenterScreen">
 
     <!--Navigation Bar Animations-->
     <Window.Resources>
@@ -45,7 +45,7 @@
 
     <Grid MouseDown="Grid_MouseDown">
         <!--The User Control Displays-->
-        <Grid x:Name="EventCenter" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="550" Width="959" />
+        <Grid x:Name="EventCenter" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="666" Width="959" />
 
         <Grid Height="50" VerticalAlignment="Top" Background="#FF2BAA45" >
 
@@ -155,6 +155,15 @@
                         </StackPanel>
                     </ListViewItem>
                     
+                    <!--The Schedule Button-->
+                    <ListViewItem x:Name="Schedule" Padding="0" Height="65">
+
+                        <StackPanel Orientation="Horizontal" Width="auto" Height="65">
+                            <materialDesign:PackIcon Kind="Schedule" Width="30" Margin="17.5 0" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
+                            <TextBlock Text="Assigned Task" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
+                        </StackPanel>
+                    </ListViewItem>
+
                     <!--The Users Button-->
                     <ListViewItem x:Name="Users" Padding="0" Height="65">
 
