@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using JustRIpe.Events;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
@@ -109,7 +110,11 @@ namespace JustRIpe
                     tab = new TimetableEvent();
                     EventCenter.Children.Add(tab);
                     break;
-               case "Users":
+                case "Employees":
+                    tab = new EmployeeEvent();
+                    EventCenter.Children.Add(tab);
+                    break;
+                case "Users":
                    tab = new UserEvent();
                    EventCenter.Children.Add(tab);
                    break;

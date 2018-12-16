@@ -146,6 +146,15 @@
                         </StackPanel>
                     </ListViewItem>
 
+                    <!--The Employees Button-->
+                    <ListViewItem x:Name="Employees" Padding="0" Height="65">
+
+                        <StackPanel Orientation="Horizontal" Width="auto" Height="65">
+                            <materialDesign:PackIcon Kind="Worker" Width="30" Margin="17.5 0" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
+                            <TextBlock Text="Employees" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    
                     <!--The Users Button-->
                     <ListViewItem x:Name="Users" Padding="0" Height="65">
 
@@ -154,7 +163,8 @@
                             <TextBlock Text="Users" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
                         </StackPanel>
                     </ListViewItem>
-
+                  
+                   
 
 
                 </ListView>
