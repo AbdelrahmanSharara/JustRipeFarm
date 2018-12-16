@@ -24,7 +24,7 @@ namespace JustRIpe.Events
         public EmployeeEvent()
         {
             InitializeComponent();
-            employeelist.ItemsSource = DatabaseStatements.displayEmployees("SELECT firstname, lastname, Email, phone, role FROM Employees").Tables[0].DefaultView;
+            employeelist.ItemsSource = DatabaseStatements.displayEmployees("SELECT firstname as 'First Name', lastname as 'Last Name', Email as 'E-Mail', phone as 'Phone Number', role as 'Role', status as 'Status' FROM Employees").Tables[0].DefaultView;
         }
     }
 }
