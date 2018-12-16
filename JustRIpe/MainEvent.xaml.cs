@@ -52,7 +52,11 @@ namespace JustRIpe
        
             private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            try
+            {
+                DragMove();
+            }
+            catch { };
         }
 
         private void Exitbt_Click(object sender, RoutedEventArgs e)
