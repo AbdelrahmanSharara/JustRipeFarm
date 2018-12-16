@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using JustRIpe.DB;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -23,6 +24,7 @@ namespace JustRIpe.Events
         public EmployeeEvent()
         {
             InitializeComponent();
+            employeelist.ItemsSource = DatabaseStatements.displayEmployees("SELECT firstname, lastname, Email, phone, role FROM Employees").Tables[0].DefaultView;
         }
     }
 }

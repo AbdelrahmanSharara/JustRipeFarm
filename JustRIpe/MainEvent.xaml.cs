@@ -36,9 +36,12 @@ namespace JustRIpe
             {
                 case "admin":
                     Users.IsEnabled = true;
+                    Delivery.IsEnabled = true;
+
                     break;
                 case "user":
                     Users.IsEnabled = false;
+                    Delivery.IsEnabled = false;
                     break;
                 default:
                     break;
