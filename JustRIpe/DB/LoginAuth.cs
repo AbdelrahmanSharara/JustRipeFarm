@@ -34,6 +34,8 @@ namespace JustRIpe
             usernull2 = username;
             permnull = username;
 
+
+            // check for apostrophe and ignore it as false if mentioned
             char[] checkuser = username.ToCharArray();
             char[] checkpass = password.ToCharArray();
 
@@ -69,7 +71,7 @@ namespace JustRIpe
         }
 
         
-
+        // used to display username on the top
         public static string displayuser()
         {
             string connectionString = Properties.Settings.Default.DBAccess;
@@ -94,6 +96,7 @@ namespace JustRIpe
             return dataSet.Tables[0].Rows[0][0].ToString(); ;
         }
 
+        //check permissions for the whole window
         public static string permcheck()
         {
             string connectionString = Properties.Settings.Default.DBAccess;

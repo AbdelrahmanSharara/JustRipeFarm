@@ -20,7 +20,10 @@ namespace JustRIpe.Events
     /// Interaction logic for SalesEvent.xaml
     /// </summary>
     public partial class SalesEvent : UserControl
-    {
+    {/// <summary>
+    /// User grid display for the sales
+    /// author written by Abdelrahman Ahmed
+    /// </summary>
         public SalesEvent()
         {
 

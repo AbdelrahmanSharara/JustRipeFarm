@@ -18,6 +18,8 @@ namespace JustRIpe.Events
 {
     /// <summary>
     /// Interaction logic for ScheduleEvent.xaml
+    /// with datagrid for the sales
+    /// written by author Abdelrahman Ahmed.
     /// </summary>
     public partial class ScheduleEvent : UserControl
     {

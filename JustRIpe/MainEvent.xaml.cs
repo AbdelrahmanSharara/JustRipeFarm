@@ -145,6 +145,12 @@ namespace JustRIpe
             }
         }
 
+        /// <summary>
+        /// Signout button used for the user to return back to the login menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void Signoutbt_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
