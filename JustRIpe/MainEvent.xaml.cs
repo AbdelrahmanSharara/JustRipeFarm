@@ -139,6 +139,7 @@ namespace JustRIpe
                    EventCenter.Children.Add(tab);
                    break;
                 default:
+                    
                     break;
 
             }
