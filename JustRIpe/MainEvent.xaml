@@ -163,6 +163,15 @@
                             <TextBlock Text="Assigned Task" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
                         </StackPanel>
                     </ListViewItem>
+                    
+                    <!--The Sales Button-->
+                    <ListViewItem x:Name="Sales" Padding="0" Height="65">
+
+                        <StackPanel Orientation="Horizontal" Width="auto" Height="65">
+                            <materialDesign:PackIcon Kind="LocalAtm" Width="30" Margin="17.5 0" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
+                            <TextBlock Text="Sales" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
+                        </StackPanel>
+                    </ListViewItem>
 
                     <!--The Users Button-->
                     <ListViewItem x:Name="Users" Padding="0" Height="65">

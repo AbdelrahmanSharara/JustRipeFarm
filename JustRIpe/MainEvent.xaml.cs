@@ -130,6 +130,10 @@ namespace JustRIpe
                     tab = new ScheduleEvent();
                     EventCenter.Children.Add(tab);
                     break;
+                case "Sales":
+                    tab = new SalesEvent();
+                    EventCenter.Children.Add(tab);
+                    break;
                 case "Users":
                    tab = new UserEvent();
                    EventCenter.Children.Add(tab);

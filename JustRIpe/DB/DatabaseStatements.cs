@@ -11,6 +11,7 @@ namespace JustRIpe.DB
         /// <summary>
         /// The following statement is used to connect the grids 
         /// of database to the program.
+        /// written by author: Abdelrahman Ahmed.
         /// </summary>
         /// <param name="sqlStatement"></param>
         /// <returns></returns>
