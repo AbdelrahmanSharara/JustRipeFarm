@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using JustRIpe.DB;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -22,7 +23,10 @@ namespace JustRIpe.Events
     {
         public SalesEvent()
         {
+
             InitializeComponent();
+            salesgrid.ItemsSource = DatabaseStatements.displaysales("SELECT name as 'Name', email as 'Email', country as 'Country', type as 'Product', quantity as 'Quantity', weeks as 'Weekly Incrument' FROM Sales").Tables[0].DefaultView;
+
         }
     }
 }
