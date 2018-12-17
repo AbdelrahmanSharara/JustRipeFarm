@@ -45,11 +45,7 @@ namespace JustRIpe
             {
                 MainEvent window = new MainEvent();
                 window.Show();
-                this.Close();
-
-
-
-
+                this.Close(); 
             }
             else
             {

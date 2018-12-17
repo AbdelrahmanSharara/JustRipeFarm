@@ -14,6 +14,7 @@ namespace JustRIpe
         /// The DataTransmission class is used to connect the database
         /// to the program using  the connection string in the app settings
         /// written by : written by author : Abdelrahman Ahmed
+        /// Ref: Week 5 Class notes from Software Engineering in Canvas
         /// </summary>
         private string ConnectionStr;
         SqlConnection connectionToDB;
