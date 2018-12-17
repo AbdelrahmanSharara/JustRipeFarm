@@ -10,13 +10,24 @@ namespace JustRIpe
 {
     class DatabaseTransmission
     {
+        /// <summary>
+        /// The DataTransmission class is used to connect the database
+        /// to the program using  the connection string in the app settings
+        /// written by : written by author : Abdelrahman Ahmed
+        /// Ref: Week 5 Class notes from Software Engineering in Canvas
+        /// </summary>
         private string ConnectionStr;
         SqlConnection connectionToDB;
         private SqlDataAdapter  dataAdapter;
 
 
         public DatabaseTransmission(string connectionStr)
-        { this.ConnectionStr = connectionStr; }
+        { ConnectionStr = connectionStr; }
+
+        public static string connectionstr
+        {
+            set { connectionstr = value; }
+        }
 
         public void openConnection()
         {
@@ -30,11 +41,15 @@ namespace JustRIpe
 
         public DataSet getDataSet(string sqlStatement)
         {
+            openConnection();
             DataSet dataSet;
+            
             dataAdapter = new SqlDataAdapter(sqlStatement, connectionToDB);
             dataSet = new DataSet();
             dataAdapter.Fill(dataSet);
+            closeConnection();
             return dataSet;
+            
         }
 
 

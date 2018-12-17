@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="JustRIpe.TimetableEvent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JustRIpe"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <local:TimetableDSet x:Key="timetableDSet"/>
+        <CollectionViewSource x:Key="eventsViewSource1" Source="{Binding Events, Source={StaticResource timetableDSet}}"/>
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource eventsViewSource1}">
+        <Label Content="Timetable" HorizontalAlignment="Left" Margin="383,10,0,0" VerticalAlignment="Top" Height="74" FontSize="36" Width="170"/>
+        <DataGrid x:Name="eventsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource eventsViewSource1}}" Margin="10,84,10,35.6" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.111"/>
+                    <GradientStop Color="#DDB97938" Offset="0.11"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="eventIDColumn" Binding="{Binding eventID}" Header="Event ID" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="cropIDColumn" Binding="{Binding cropID}" Header="Crop ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="vehicleIDColumn" Binding="{Binding vehicleID}" Header="Vehicle ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="eventNameColumn" Binding="{Binding eventName}" Header="Name" Width="SizeToCells"/>
+                <DataGridTextColumn x:Name="eventDescriptionColumn" Binding="{Binding eventDescription}" Header="Description" Width="SizeToCells"/>
+                <DataGridTemplateColumn x:Name="eventDateColumn" Header="Date" Width="SizeToCells">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding eventDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="eventTimeColumn" Binding="{Binding eventTime}" Header="Time" Width="SizeToCells"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="accessDeniedlbl" Content="Access Denied" HorizontalAlignment="Left" Margin="302,211,0,0" VerticalAlignment="Top" FontSize="48"/>
+    </Grid>
+</UserControl>

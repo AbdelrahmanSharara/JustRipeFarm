@@ -82,17 +82,65 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CropsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CropsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CropStock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CropStock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DB\DatabaseStatements.cs" />
     <Compile Include="Events\CropsEvent.xaml.cs">
       <DependentUpon>CropsEvent.xaml</DependentUpon>
     </Compile>
     <Compile Include="Events\DeliveryEvent.xaml.cs">
       <DependentUpon>DeliveryEvent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Events\EmployeeEvent.xaml.cs">
+      <DependentUpon>EmployeeEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\SalesEvent.xaml.cs">
+      <DependentUpon>SalesEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\ScheduleEvent.xaml.cs">
+      <DependentUpon>ScheduleEvent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Events\StorageEvent.xaml.cs">
       <DependentUpon>StorageEvent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Events\UsersEvent.xaml.cs">
-      <DependentUpon>UsersEvent.xaml</DependentUpon>
+    <Compile Include="FertiliserDSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FertiliserDSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FertilisersDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FertilisersDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StorageDSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StorageDSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Events\TimetableEvent.xaml.cs">
+      <DependentUpon>TimetableEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TimetableDSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimetableDSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Events\UserEvent.xaml.cs">
+      <DependentUpon>UserEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleStock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VehicleStock.xsd</DependentUpon>
     </Compile>
     <Page Include="Events\CropsEvent.xaml">
       <SubType>Designer</SubType>
@@ -103,6 +151,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Events\DeliveryEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\EmployeeEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\SalesEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\ScheduleEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,7 +194,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Events\UsersEvent.xaml">
+    <Page Include="Events\TimetableEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\UserEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,10 +221,87 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="CropsDataSet.xsc">
+      <DependentUpon>CropsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CropsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CropsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CropsDataSet.xss">
+      <DependentUpon>CropsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CropStock.xsc">
+      <DependentUpon>CropStock.xsd</DependentUpon>
+    </None>
+    <None Include="CropStock.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CropStock.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CropStock.xss">
+      <DependentUpon>CropStock.xsd</DependentUpon>
+    </None>
+    <None Include="FertiliserDSet.xsc">
+      <DependentUpon>FertiliserDSet.xsd</DependentUpon>
+    </None>
+    <None Include="FertiliserDSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FertiliserDSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FertiliserDSet.xss">
+      <DependentUpon>FertiliserDSet.xsd</DependentUpon>
+    </None>
+    <None Include="FertilisersDataSet.xsc">
+      <DependentUpon>FertilisersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FertilisersDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FertilisersDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FertilisersDataSet.xss">
+      <DependentUpon>FertilisersDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="StorageDSet.xsc">
+      <DependentUpon>StorageDSet.xsd</DependentUpon>
+    </None>
+    <None Include="StorageDSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StorageDSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StorageDSet.xss">
+      <DependentUpon>StorageDSet.xsd</DependentUpon>
+    </None>
+    <None Include="TimetableDSet.xsc">
+      <DependentUpon>TimetableDSet.xsd</DependentUpon>
+    </None>
+    <None Include="TimetableDSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TimetableDSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TimetableDSet.xss">
+      <DependentUpon>TimetableDSet.xsd</DependentUpon>
+    </None>
+    <None Include="VehicleStock.xsc">
+      <DependentUpon>VehicleStock.xsd</DependentUpon>
+    </None>
+    <None Include="VehicleStock.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VehicleStock.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VehicleStock.xss">
+      <DependentUpon>VehicleStock.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

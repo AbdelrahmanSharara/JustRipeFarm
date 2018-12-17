@@ -5,8 +5,61 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:JustRIpe"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="Red">
-    <Grid>
-            
+             d:DesignHeight="450" d:DesignWidth="800" Background="White" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <local:StorageDSet x:Key="storageDSet"/>
+        <CollectionViewSource x:Key="storageViewSource" Source="{Binding Storage, Source={StaticResource storageDSet}}"/>
+        <local:CropStock x:Key="cropStock"/>
+        <CollectionViewSource x:Key="cropsViewSource" Source="{Binding Crops, Source={StaticResource cropStock}}"/>
+        <local:CropsDataSet x:Key="cropsDataSet"/>
+        <CollectionViewSource x:Key="cropsViewSource1" Source="{Binding Crops, Source={StaticResource cropsDataSet}}"/>
+        <local:VehicleStock x:Key="vehicleStock"/>
+        <CollectionViewSource x:Key="vehiclesViewSource" Source="{Binding Vehicles, Source={StaticResource vehicleStock}}"/>
+        <local:FertiliserDSet x:Key="fertiliserDSet"/>
+        <CollectionViewSource x:Key="fertilisersViewSource" Source="{Binding Fertilisers, Source={StaticResource fertiliserDSet}}"/>
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource storageViewSource}">
+        <Label Content="Storage" HorizontalAlignment="Left" Margin="383,10,0,0" VerticalAlignment="Top" Height="74" FontSize="36" Width="170"/>
+        <DataGrid x:Name="storageDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="34,89,10,259.6" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="StorageDataGrid_SelectionChanged">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.237"/>
+                    <GradientStop Color="#FFBBD38A" Offset="0.236"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="storageIDColumn" Binding="{Binding storageID}" Header="Storage ID" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="containerIDColumn" Binding="{Binding containerID}" Header="Container ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="fertiliserIDColumn" Binding="{Binding fertiliserID}" Header="Fertiliser ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="storageNameColumn" Binding="{Binding storageName}" Header="Name" Width="SizeToCells"/>
+                <DataGridTextColumn x:Name="storageCapacityColumn" Binding="{Binding storageCapacity}" Header="Capacity" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="storageAvailabilityColumn" Binding="{Binding storageAvailability}" Header="Availability" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="minTempColumn" Binding="{Binding minTemp}" Header="Min Temp" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="maxTempColumn" Binding="{Binding maxTemp}" Header="Max Temp" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="cropsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource cropsViewSource}}" Margin="34,339,645,38.6" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="cropNameColumn" Binding="{Binding cropName}" Header="Name" Width="SizeToCells"/>
+                <DataGridTextColumn x:Name="currentStatusColumn" Binding="{Binding currentStatus}" Header="Status" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Crop Availability" HorizontalAlignment="Left" Margin="97,301,0,0" VerticalAlignment="Top" Height="74" FontSize="14" Width="170"/>
+        <Label Content="Vehicle Availability" HorizontalAlignment="Left" Margin="395,301,0,0" VerticalAlignment="Top" Height="74" FontSize="14" Width="170"/>
+        <DataGrid x:Name="vehiclesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource vehiclesViewSource}}" Margin="329,339,324,45.6" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="vehicleIDColumn" Binding="{Binding vehicleID}" Header="ID" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="vehicleNameColumn" Binding="{Binding vehicleName}" Header="Name" Width="SizeToCells"/>
+                <DataGridTextColumn x:Name="vehicleAvailabilityColumn" Binding="{Binding vehicleAvailability}" Header="Status" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="fertilisersDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource fertilisersViewSource}}" Margin="644,339,10,25.6" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="fertiliserNameColumn" Binding="{Binding fertiliserName}" Header="Name" Width="SizeToCells"/>
+                <DataGridTextColumn x:Name="stockAvailableColumn" Binding="{Binding stockNeeded}" Header="Availability" Width="SizeToCells"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Fertiliser Availability" HorizontalAlignment="Left" Margin="725,301,-95,0" VerticalAlignment="Top" Height="74" FontSize="14" Width="170"/>
+
     </Grid>
 </UserControl>

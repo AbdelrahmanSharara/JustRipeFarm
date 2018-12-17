@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+using System.Text.RegularExpressions;
+
+
 
 namespace JustRIpe
 {
@@ -22,60 +26,149 @@ namespace JustRIpe
     {
         public MainWindow()
         {
+
             InitializeComponent();
+            ///this indicates that the loading bar is on but hidden
+            /// written by author : Abdelrahman Ahmed
+            progbar.IsIndeterminate = true;
+            progbar.Opacity = 0;
         }
 
-        //verify the login using the database 
+        /// <summary>
+        /// this statement is used to Verify the username and password match with the database
+        /// otherwise return the message of incorrect details.
+        /// written by author : Abdelrahman Ahmed  
+        /// </summary>
         private void LoginInit()
         {
             if (LoginAuth.VerifyLogin(Username_txt.Text, Password_txt.Password))
             {
-                MessageBox.Show("correct details");
                 MainEvent window = new MainEvent();
                 window.Show();
-                this.Close();
-                    
-
-
-
+                this.Close(); 
             }
             else
-            { MessageBox.Show("incorrect details"); }
+            {
+                progbar.Opacity = 0;
+                MessageBox.Show("Incorrect details. Please try again.");
+            }
         }
 
-        //The close button
+        /// <summary>
+        /// this functionality is used for the designed close button in MainWindow.Xaml
+        /// written by author : Abdelrahman Ahmed 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-           Application.Current.Shutdown();
+            Application.Current.Shutdown();
         }
-        //The minimise button 
+        /// <summary>
+        /// this functionality is used for the designed Minimise button in MainWindow.Xaml
+        /// written by author : Abdelrahman Ahmed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MinimiseButton_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
 
-        //Draggable Window from the grid bar
+        /// <summary>
+        /// The DragMove functionality is used to drag the window
+        /// written by author : Abdelrahman Ahmed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            try
+            {
+                DragMove();
+            }
+            catch {
+               
+            }
         }
 
-        private void SignInButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// the Sign-in button Click is used with async await to use the login bar animation
+        /// and initialise the login
+        /// written by author : Abdelrahman Ahmed 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void SignInButton_Click(object sender, RoutedEventArgs e)
         {
 
+            progbar.Opacity = 1;
 
+            await Task.Delay(200);
             LoginInit();
-           
+
         }
-        
-        //Enter button can initialise the login procedure
+
+        /// <summary>
+        /// the keydown is used in the password box for the user's convenience 
+        /// to click enter rather than using the mouse for the login
+        /// written by author : Abdelrahman Ahmed 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Password_txt_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key != System.Windows.Input.Key.Enter)
+
+            if (e.Key != Key.Enter)
                 return;
-                SignInButton_Click(sender, e);
+
+            SignInButton_Click(sender, e);            
+
         }
 
-        
+
+        /// <summary>
+        /// the keydown is used in the password box for the user's convenience 
+        /// to click enter rather than using the mouse for the login
+        /// written by author : Abdelrahman Ahmed 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Username_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key != Key.Enter)
+
+                return;
+            SignInButton_Click(sender, e);
+
+        }
+
+        /// <summary>
+        /// the username text preview is used to check and block certain character
+        /// using REGEX Regular Expressions
+        /// written by author : Abdelrahman Ahmed
+        /// ref: https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.7.2
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Username_txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regular = new Regex("['=]");
+            e.Handled = regular.IsMatch(e.Text);
+        }
+
+        /// <summary>
+        /// the password text preview is used to check and block certain character
+        /// using REGEX Regular Expressions
+        /// written by author : Abdelrahman Ahmed
+        /// ref: https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.7.2
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Password_txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regular = new Regex("['=]");
+            e.Handled = regular.IsMatch(e.Text);
+        }
     }
 }

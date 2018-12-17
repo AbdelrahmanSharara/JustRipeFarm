@@ -8,9 +8,11 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using JustRIpe.Events;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace JustRIpe
 {
@@ -19,13 +21,47 @@ namespace JustRIpe
     /// </summary>
     public partial class MainEvent : Window
     {
+        /// <summary>
+        /// after initialise component the uername appears on the top of the window
+        /// and then the switch case is used to display certain properities 
+        /// depending if the user is an admin or not
+        /// written by author : Abdelrahman Ahmed 
+        /// </summary>
         public MainEvent()
         {
+            
             InitializeComponent();
+            UserView.Text =  LoginAuth.displayuser();
+            switch (LoginAuth.permcheck())
+            {
+                case "admin":
+                    Users.IsEnabled = true;
+                    Delivery.IsEnabled = true;
+
+                    break;
+                case "user":
+                    Users.IsEnabled = false;
+                    Delivery.IsEnabled = false;
+                    break;
+                default:
+                    break;
+
+            }
         }
+
+        /// <summary>
+        /// The DragMove functionality is used to drag the window
+        /// written by author : Abdelrahman Ahmed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            try
+            {
+                DragMove();
+            }
+            catch { };
         }
 
         private void Exitbt_Click(object sender, RoutedEventArgs e)
@@ -45,6 +81,16 @@ namespace JustRIpe
             CloseMenu.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// The Following method is used to display all the usercontrol tabs
+        /// in a list form using switch case that changes when the user click on a different
+        /// usercontrol button.
+        /// written by author : Abdelrahman Ahmed 
+        /// ref: https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.selectionchangedeventargs?view=netframework-4.7.2
+        /// using selection event changer with children to add new tab and clear the previous one. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -53,6 +99,7 @@ namespace JustRIpe
 
             switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
             {
+
                 case "Dashboard":
                     tab = new DashboardEvent();
                     EventCenter.Children.Add(tab);
@@ -71,15 +118,38 @@ namespace JustRIpe
                     tab = new DeliveryEvent();
                     EventCenter.Children.Add(tab);
                     break;
-                case "Users":
-                    tab = new UsersEvent();
+                case "Timetable":
+                    tab = new TimetableEvent();
                     EventCenter.Children.Add(tab);
                     break;
+                case "Employees":
+                    tab = new EmployeeEvent();
+                    EventCenter.Children.Add(tab);
+                    break;
+                case "Schedule":
+                    tab = new ScheduleEvent();
+                    EventCenter.Children.Add(tab);
+                    break;
+                case "Sales":
+                    tab = new SalesEvent();
+                    EventCenter.Children.Add(tab);
+                    break;
+                case "Users":
+                   tab = new UserEvent();
+                   EventCenter.Children.Add(tab);
+                   break;
                 default:
+                    
                     break;
 
             }
         }
+
+        /// <summary>
+        /// Signout button used for the user to return back to the login menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void Signoutbt_Click(object sender, RoutedEventArgs e)
         {

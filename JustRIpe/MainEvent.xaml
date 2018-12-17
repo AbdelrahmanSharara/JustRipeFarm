@@ -6,19 +6,23 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:JustRIpe"
         mc:Ignorable="d"
-        Title="JustRipe" Height="600" Width="1024" ResizeMode="NoResize" WindowStyle="None" Foreground="White" WindowStartupLocation="CenterScreen">
+        Title="JustRipe" Height="720" Width="1024" ResizeMode="NoResize"  WindowStyle="None" Foreground="White" WindowStartupLocation="CenterScreen">
+
+    <!--Navigation Bar Animations-->
     <Window.Resources>
         <!--Navigation bar show animation-->
+
         <Storyboard x:Key="MenuOn">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Menu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="65"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="215"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="220"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
+
         <!--Navigation bar hide animation-->
         <Storyboard x:Key="MenuOff">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Menu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="215"/>
+                <EasingDoubleKeyFrame KeyTime="0" Value="220"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="65"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
@@ -36,30 +40,41 @@
         </EventTrigger>
     </Window.Triggers>
 
-    
+
+
+
     <Grid MouseDown="Grid_MouseDown">
         <!--The User Control Displays-->
-        <Grid x:Name="EventCenter" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="550" Width="959" />
+        <Grid x:Name="EventCenter" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="666" Width="959" />
 
-        <Grid Height="50" VerticalAlignment="Top" Background="#FF2BAA45">
+        <Grid Height="50" VerticalAlignment="Top" Background="#FF2BAA45" >
+
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
             </Grid.Effect>
+          
             
-            
+            <!--User name Display-->
+            <TextBlock x:Name="UserView" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Padding="0" FontFamily="OpenDyslexic" Margin="360,0,278,0" Width="386" ></TextBlock>
             <StackPanel>
+
+                <!--Top right grid-->
                 <materialDesign:PopupBox  HorizontalAlignment="Right" Margin="11"
                                           PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
                     <StackPanel Width="150">
-                    <!--Signout Button-->
-                        <Button x:Name="Signoutbt" Content="Sign out" Click="Signoutbt_Click"/>
-                    <!--Exit Button-->
-                        <Button x:Name="Exitbt" Content="Exit" Click="Exitbt_Click"/>
+
+
+                        <!--Signout Button-->
+                        <Button x:Name="Signoutbt" Content="Sign out" Click="Signoutbt_Click" />
+                        
+                        <!--Exit Button-->
+                        <Button x:Name="Exitbt" Content="Exit" Click="Exitbt_Click" />
+
                     </StackPanel>
                 </materialDesign:PopupBox>
             </StackPanel>
-        </Grid>
 
+        </Grid>
 
         <Grid x:Name="Menu" Width="65"  HorizontalAlignment="Left" Background="#FF16AE35">
             <StackPanel>
@@ -68,7 +83,7 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    
+
                     <!--Close Navigation Bar Button-->
                     <Button x:Name="CloseMenu" Grid.Row="0" Width="65" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="CloseMenu_Click">
                         <materialDesign:PackIcon Foreground="#FF16AE35" Kind="ArrowLeft" Width="30" Height="30"/>
@@ -77,8 +92,10 @@
                     <Button x:Name="OpenMenu" Grid.Row="0" Width="65" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="OpenMenu_Click">
                         <materialDesign:PackIcon Foreground="#FF16AE35" Kind="Menu" Width="37" Height="30" Margin="-5" />
                     </Button>
-                    <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8 15" Grid.Row="1" Source="logo.jpg" Stretch="Uniform"/>
-                    
+
+                    <!--the Offical Logo-->
+                    <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8 14" Grid.Row="1" Source="logo.jpg" Stretch="Uniform"/>
+
 
                 </Grid>
 
@@ -110,7 +127,7 @@
                             <TextBlock Text="Crops" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
                         </StackPanel>
                     </ListViewItem>
-    
+
                     <!--The Delivery Button-->
                     <ListViewItem x:Name="Delivery" Padding="0" Height="65">
 
@@ -119,7 +136,43 @@
                             <TextBlock Text="Delivery" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFFFFFF"/>
                         </StackPanel>
                     </ListViewItem>
-                
+
+                    <!--The Timetable Button-->
+                    <ListViewItem x:Name="Timetable" Padding="0" Height="65">
+
+                        <StackPanel Orientation="Horizontal" Width="auto" Height="65">
+                            <materialDesign:PackIcon Kind="Calendar" Width="30" Margin="17.5 0" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
+                            <TextBlock Text="Timetable" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <!--The Employees Button-->
+                    <ListViewItem x:Name="Employees" Padding="0" Height="65">
+
+                        <StackPanel Orientation="Horizontal" Width="auto" Height="65">
+                            <materialDesign:PackIcon Kind="Worker" Width="30" Margin="17.5 0" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
+                            <TextBlock Text="Employees" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    
+                    <!--The Schedule Button-->
+                    <ListViewItem x:Name="Schedule" Padding="0" Height="65">
+
+                        <StackPanel Orientation="Horizontal" Width="auto" Height="65">
+                            <materialDesign:PackIcon Kind="Schedule" Width="30" Margin="17.5 0" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
+                            <TextBlock Text="Assigned Task" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    
+                    <!--The Sales Button-->
+                    <ListViewItem x:Name="Sales" Padding="0" Height="65">
+
+                        <StackPanel Orientation="Horizontal" Width="auto" Height="65">
+                            <materialDesign:PackIcon Kind="LocalAtm" Width="30" Margin="17.5 0" Height="30" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
+                            <TextBlock Text="Sales" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
+                        </StackPanel>
+                    </ListViewItem>
+
                     <!--The Users Button-->
                     <ListViewItem x:Name="Users" Padding="0" Height="65">
 
@@ -128,6 +181,9 @@
                             <TextBlock Text="Users" VerticalAlignment="Center" Margin="15 10" Foreground="#DDFDFDFD"/>
                         </StackPanel>
                     </ListViewItem>
+                  
+                   
+
 
                 </ListView>
             </StackPanel>
